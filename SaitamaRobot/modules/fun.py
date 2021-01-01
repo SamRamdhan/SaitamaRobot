@@ -92,7 +92,7 @@ def slap(update: Update, context: CallbackContext):
 
 
 @run_async
-def pat(update: Update, context: CallbackContext):
+def mesum(update: Update, context: CallbackContext):
     bot = context.bot
     args = context.args
     message = update.effective_message
@@ -174,7 +174,7 @@ def bluetext(update: Update, context: CallbackContext):
 
 
 @run_async
-def hina(update: Update, context: CallbackContext):
+def rlg(update: Update, context: CallbackContext):
     eyes = random.choice(fun_strings.EYES)
     mouth = random.choice(fun_strings.MOUTHS)
     ears = random.choice(fun_strings.EARS)
@@ -187,13 +187,13 @@ def hina(update: Update, context: CallbackContext):
 
 
 @run_async
-def decide(update: Update, context: CallbackContext):
+def bacot(update: Update, context: CallbackContext):
     reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
     reply_text(random.choice(fun_strings.DECIDE))
 
 
 @run_async
-def bacot(update: Update, context: CallbackContext):
+def hina(update: Update, context: CallbackContext):
     reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
     reply_text(random.choice(fun_strings.EIGHTBALL))
 
@@ -247,7 +247,7 @@ __help__ = """
  • `/slap`*:* geplak pengguna
  • `/shrug`*:* mana saya tau
  • `/table`*:* flip/unflip :v
- • `/decide`*:* jawaban random iya/tidak/mungkin
+ • `/rlg`*:* random ekspresi
  • `/toss`*:* lempar koin
  • `/bluetext`*:* cek diri anda sendiri:V
  • `/roll`*:* menampilkan angka dadu
@@ -255,21 +255,21 @@ __help__ = """
  • `/shout <kata>`*:* tulis apapun yang ingin anda teriakkan
  • `/weebify <text>`*:* mengembalikan text weebify
  • `/sanitize`*:* menyemprot cairan suci
- • `/pat`*:* pats a user, or get patted
+ • `/mesum`*:* xixixixixi
  • `/bacot`*:* halah bacot kau
 """
 
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize)
 RUNS_HANDLER = DisableAbleCommandHandler("gombal", gombal)
 SLAP_HANDLER = DisableAbleCommandHandler("slap", slap)
-PAT_HANDLER = DisableAbleCommandHandler("pat", pat)
+PAT_HANDLER = DisableAbleCommandHandler("mesum", mesum)
 ROLL_HANDLER = DisableAbleCommandHandler("roll", roll)
 TOSS_HANDLER = DisableAbleCommandHandler("toss", toss)
 SHRUG_HANDLER = DisableAbleCommandHandler("shrug", shrug)
 BLUETEXT_HANDLER = DisableAbleCommandHandler("bluetext", bluetext)
-RLG_HANDLER = DisableAbleCommandHandler("hina", hina)
-DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
-EIGHTBALL_HANDLER = DisableAbleCommandHandler("bacot", eightball)
+RLG_HANDLER = DisableAbleCommandHandler("rlg", rlg)
+DECIDE_HANDLER = DisableAbleCommandHandler("bacot", bacot)
+EIGHTBALL_HANDLER = DisableAbleCommandHandler("hina", hina)
 TABLE_HANDLER = DisableAbleCommandHandler("table", table)
 SHOUT_HANDLER = DisableAbleCommandHandler("shout", shout)
 WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify)
