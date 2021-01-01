@@ -30,7 +30,7 @@ def add_chat(update: Update, context: CallbackContext):
     user = update.effective_user
     is_chat = sql.is_chat(chat.id)
     if chat.type == "private":
-        msg.reply_text("You can't enable AI in PM.")
+        msg.reply_text("Anda tidak dapat mengaktifkan chatbot di PM.")
         return
 
     if not is_chat:
@@ -38,15 +38,15 @@ def add_chat(update: Update, context: CallbackContext):
         ses_id = str(ses.id)
         expires = str(ses.expires)
         sql.set_ses(chat.id, ses_id, expires)
-        msg.reply_text("AI successfully enabled for this chat!")
+        msg.reply_text("Chatbot sukses diaktifkan di grup ini!")
         message = (
             f"<b>{html.escape(chat.title)}:</b>\n"
-            f"#AI_ENABLED\n"
+            f"#Chatbot_Aktif\n"
             f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
         )
         return message
     else:
-        msg.reply_text("AI is already enabled for this chat!")
+        msg.reply_text("Chatbot telah diaktifkan untuk grup ini!")
         return ""
 
 
@@ -59,14 +59,14 @@ def remove_chat(update: Update, context: CallbackContext):
     user = update.effective_user
     is_chat = sql.is_chat(chat.id)
     if not is_chat:
-        msg.reply_text("AI isn't enabled here in the first place!")
+        msg.reply_text("Chatbot tidak diaktifkan disini sejak awal!")
         return ""
     else:
         sql.rem_chat(chat.id)
-        msg.reply_text("AI disabled successfully!")
+        msg.reply_text("Sukses me-nonaktikan chatbot!")
         message = (
             f"<b>{html.escape(chat.title)}:</b>\n"
-            f"#AI_DISABLED\n"
+            f"#Chatbot_Dimatikan\n"
             f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
         )
         return message
@@ -74,7 +74,7 @@ def remove_chat(update: Update, context: CallbackContext):
 
 def check_message(context: CallbackContext, message):
     reply_msg = message.reply_to_message
-    if message.text.lower() == "saitama":
+    if message.text.lower() == "oi canzu":
         return True
     if reply_msg:
         if reply_msg.from_user.id == context.bot.get_me().id:
@@ -120,7 +120,7 @@ def chatbot(update: Update, context: CallbackContext):
 @run_async
 def list_chatbot_chats(update: Update, context: CallbackContext):
     chats = sql.get_all_chats()
-    text = "<b>AI-Enabled Chats</b>\n"
+    text = "<b>Chatbot-Diaktifkan di grup</b>\n"
     for chat in chats:
         try:
             x = context.bot.get_chat(int(*chat))
@@ -136,15 +136,15 @@ def list_chatbot_chats(update: Update, context: CallbackContext):
 
 
 __help__ = f"""
-Chatbot utilizes the CoffeeHouse API and allows Saitama to talk and provides a more interactive group chat experience.
+Chatbot menggunakan API CoffeeHouse dan memungkinkan canzu untuk mengirim pesan dan memberikan pengalaman chat yang lebih interaktif.
 
-*Commands:* 
-*Admins only:*
- • `/addchat`*:* Enables Chatbot mode in the chat.
- • `/rmchat`*:* Disables Chatbot mode in the chat.
+*Perintah:* 
+*Hanya Admin:*
+ • `/addchat`*:* mengaktifkan chatbot di grup.
+ • `/rmchat`*:* menonaktifkan chatbot di grup.
 
-Reports bugs at @{SUPPORT_CHAT}
-*Powered by CoffeeHouse* (https://coffeehouse.intellivoid.net/) from @Intellivoid
+Silahkan gabung ke grup @{SUPPORT_CHAT}
+*Didukung oleh CoffeeHouse* (https://coffeehouse.intellivoid.net/) dari @Intellivoid
 """
 
 ADD_CHAT_HANDLER = CommandHandler("addchat", add_chat)
