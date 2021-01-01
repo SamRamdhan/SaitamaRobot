@@ -26,7 +26,7 @@ def totranslate(update: Update, context: CallbackContext):
             try:
                 source_lang = args[1].split(None, 1)[0]
             except (IndexError, AttributeError):
-                source_lang = "en"
+                source_lang = "id"
 
         else:
             args = update.effective_message.text.split(None, 2)
@@ -65,7 +65,7 @@ def totranslate(update: Update, context: CallbackContext):
             detection = trl.detect(text)
             trans_str = trl.translate(text, lang_tgt=dest_lang)
             return message.reply_text(
-                f"Translated from `{detection[0]}` to `{dest_lang}`:\n`{trans_str}`",
+                f"Terjemahan dari bahasa `{detection[0]}` ke bahasa `{dest_lang}`:\n`{trans_str}`",
                 parse_mode=ParseMode.MARKDOWN)
         else:
             trans_str = trl.translate(
@@ -76,7 +76,7 @@ def totranslate(update: Update, context: CallbackContext):
 
     except IndexError:
         update.effective_message.reply_text(
-            "Balas pesan atau tulis pesan dari bahasa lain​​untuk menerjemahkan ke bahasa yang diinginkan\n\n"
+            "Balas pesan atau tulis pesan dari bahasa lain ​​untuk menerjemahkan ke bahasa yang diinginkan\n\n"
             "Contoh: `/tr en-id` untuk menerjemahkan dari bahasa Inggris ke Bahasa Indonesia\n"
             "Atau gunakan: `/tr id` untuk otomatis menerjemahkan ke bahasa Indonesia.\n"
             "Lihat [disini](t.me/canzu/20) untuk melihat semua daftar bahasa yang tersedia.",
@@ -90,16 +90,16 @@ def totranslate(update: Update, context: CallbackContext):
 
 
 __help__ = """
-• `/tr` or `/tl` (language code) as reply to a long message
-*Example:* 
-  `/tr en`*:* translates something to english
-  `/tr hi-en`*:* translates hindi to english
+• `/tr` atau `/tl` (kode bahasa) dengan membalas pesan yang ingin diterjemahkan
+*Contoh:* 
+  `/tr id`*:* terjemahkan pesan ke bahasa Indonesia
+  `/tr en-id`*:* menerjemahkan dari bahasa Inggris ke bahasa Indonesia
 """
 
 TRANSLATE_HANDLER = DisableAbleCommandHandler(["tr", "tl"], totranslate)
 
 dispatcher.add_handler(TRANSLATE_HANDLER)
 
-__mod_name__ = "Translator"
+__mod_name__ = "Kamus"
 __command_list__ = ["tr", "tl"]
 __handlers__ = [TRANSLATE_HANDLER]
