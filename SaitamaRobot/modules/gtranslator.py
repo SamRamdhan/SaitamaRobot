@@ -71,20 +71,20 @@ def totranslate(update: Update, context: CallbackContext):
             trans_str = trl.translate(
                 text, lang_tgt=dest_lang, lang_src=source_lang)
             message.reply_text(
-                f"Translated from `{source_lang}` to `{dest_lang}`:\n`{trans_str}`",
+                f"Diterjemahkan dari bahasa `{source_lang}` ke bahasa `{dest_lang}`:\n`{trans_str}`",
                 parse_mode=ParseMode.MARKDOWN)
 
     except IndexError:
         update.effective_message.reply_text(
-            "Reply to messages or write messages from other languages ​​for translating into the intended language\n\n"
-            "Example: `/tr en-ml` to translate from English to Malayalam\n"
-            "Or use: `/tr ml` for automatic detection and translating it into Malayalam.\n"
-            "See [List of Language Codes](t.me/OnePunchSupport/12823) for a list of language codes.",
+            "Balas pesan atau tulis pesan dari bahasa lain​​untuk menerjemahkan ke bahasa yang diinginkan\n\n"
+            "Contoh: `/tr en-id` untuk menerjemahkan dari bahasa Inggris ke Bahasa Indonesia\n"
+            "Atau gunakan: `/tr id` untuk otomatis menerjemahkan ke bahasa Indonesia.\n"
+            "Lihat [disini](t.me/canzu/20) untuk melihat semua daftar bahasa yang tersedia.",
             parse_mode="markdown",
             disable_web_page_preview=True)
     except ValueError:
         update.effective_message.reply_text(
-            "The intended language is not found!")
+            "Bahasa yang dimaksud tidak ditemukan!")
     else:
         return
 
