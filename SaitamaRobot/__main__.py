@@ -78,7 +78,7 @@ Dan yang lainnya:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nSemua perintah menggunakan / atau !.\n")
 
-SAITAMA_IMG = "https://telegra.ph/file/46e6d9dfcb3eb9eae95d9.jpg"
+SAITAMA_IMG = "https://telegra.ph/file/af956b8a1877561d7362a.jpg"
 
 DONATE_STRING = """Halo, apakah anda akan berdonasi?
 Pemilik saya pasti akan sangat senang jika anda berdonasi. Semua donasi yang masuk kesini akan digunakan untuk membayar server bot.
@@ -207,7 +207,7 @@ def start(update: Update, context: CallbackContext):
                     ],
                      [
                          InlineKeyboardButton(
-                             text="🚑 Support Group",
+                             text="👥 Grup Kami",
                              url=f"https://t.me/{SUPPORT_CHAT}"),
                          InlineKeyboardButton(
                              text="🕊️ Twitter",
