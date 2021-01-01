@@ -81,7 +81,7 @@ Dan yang lainnya:
 SAITAMA_IMG = "https://telegra.ph/file/af956b8a1877561d7362a.jpg"
 
 DONATE_STRING = """Halo, apakah anda akan berdonasi?
-Pemilik saya pasti akan sangat senang jika anda berdonasi. Semua donasi yang masuk kesini akan digunakan untuk membayar server bot.
+Saya sangat senang jika anda berdonasi. Semua donasi yang masuk kesini akan digunakan untuk membayar server bot.
 Juga digunakan untuk keperluan grup. Seperti biaya untuk membuat event dan sebagainya.
 Silahkan langsung hubungi salah satu staff grup [Kerabat Online](https://t.me/KerabatOnline) untuk proses transfer donasi."""
 
