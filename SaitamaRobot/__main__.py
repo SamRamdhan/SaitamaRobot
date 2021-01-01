@@ -51,38 +51,39 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hi {}, my name is {}! 
-I am an Anime themed group management bot.
-Build by weebs for weebs, I specialize in managing anime and similar themed groups.
-You can find my list of available commands with /help.
+Halo {}, nama saya {}! 
+Saya adalah official bot manajemen grup [Kerabat Online](https://t.me/KerabatOnline) dan afiliasi.
+Gabung bersama kami untuk bermain berbagai macam game di telegram.
+
+Ketik /help untuk melihat perintah yang tersedia.
 """
 
 HELP_STRINGS = """
-Hey there! My name is *{}*.
-I'm a Hero For Fun and help admins manage their groups with One Punch! Have a look at the following for an idea of some of \
-the things I can help you with.
+Hai kerabat! Nama saya*{}*.
+---------------------
 
-*Main* commands available:
- • /help: PM's you this message.
- • /help <module name>: PM's you info about that module.
- • /donate: information on how to donate!
+
+*Perintah Utama* :
+ • /help: menampilkan menu ini
+ • /help <nama modul>: memberikan informasi tentang modul tersebut.
+ • /donate: informasi tentang donasi!
  • /settings:
-   • in PM: will send you your settings for all supported modules.
-   • in a group: will redirect you to pm, with all that chat's settings.
+   • di PM: akan mengirimkan anda semua pengaturan modul dukungan.
+   • di grup: mengarahkan anda ke PM, dengan semua pengaturan chat.
 
 
 {}
-And the following:
+Dan yang lainnya:
 """.format(
     dispatcher.bot.first_name, ""
-    if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
+    if not ALLOW_EXCL else "\nSemua perintah menggunakan / atau !.\n")
 
 SAITAMA_IMG = "https://telegra.ph/file/46e6d9dfcb3eb9eae95d9.jpg"
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
-Saitama is hosted on one of Kaizoku's Servers and doesn't require any donations as of now but \
-You can donate to the original writer of the Base code, Paul
-There are two ways of supporting him; [PayPal](paypal.me/PaulSonOfLars), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
+DONATE_STRING = """Halo, apakah anda akan berdonasi?
+Pemilik saya pasti akan sangat senang jika anda berdonasi. Semua donasi yang masuk kesini akan digunakan untuk membayar server bot.
+Juga digunakan untuk keperluan grup @KerabatOnline. Seperti dana untuk membuat event dan sebagainya.
+Silahkan beralih ke [Kerabat Bot](https://t.me/KerabatBot), atau langsung hubungi salah satu staff grup [Kerabat Online](https://t.me/KerabatOnline)."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -200,7 +201,7 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="☑️ Add Saitama to your group",
+                            text="☑️ Tambahkan Canzu ke Grup Anda",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                     ],
@@ -209,18 +210,18 @@ def start(update: Update, context: CallbackContext):
                              text="🚑 Support Group",
                              url=f"https://t.me/{SUPPORT_CHAT}"),
                          InlineKeyboardButton(
-                             text="🔔 Updates Channel",
-                             url="https://t.me/OnePunchUpdates")
+                             text="🕊️ Twitter",
+                             url="https://twitter.com/KerabatOnline")
                      ],
                      [
                          InlineKeyboardButton(
-                             text="🧾 Getting started guide",
-                             url="https://t.me/OnePunchUpdates/29")
+                             text="📢 Kerabat Online Channel",
+                             url="https://t.me/KerabatOnline_Ch")
                      ],
                      [
                          InlineKeyboardButton(
-                             text="🗄 Source code",
-                             url="https://github.com/AnimeKaizoku/SaitamaRobot")
+                             text="📝 Kerabat Moment",
+                             url="https://t.me/KerabatMoment")
                      ]]))
     else:
         update.effective_message.reply_text(
@@ -272,7 +273,7 @@ def help_button(update, context):
     try:
         if mod_match:
             module = mod_match.group(1)
-            text = ("Here is the help for the *{}* module:\n".format(
+            text = ("Ini adalah bantuan untuk modul *{}* :\n".format(
                 HELPABLE[module].__mod_name__) + HELPABLE[module].__help__)
             query.message.edit_text(
                 text=text,
@@ -280,7 +281,7 @@ def help_button(update, context):
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton(
-                        text="Back", callback_data="help_back")
+                        text="Kembali", callback_data="help_back")
                 ]]))
 
         elif prev_match:
@@ -324,19 +325,19 @@ def get_help(update: Update, context: CallbackContext):
         if len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
             module = args[1].lower()
             update.effective_message.reply_text(
-                f"Contact me in PM to get help of {module.capitalize()}",
+                f"Hubungi saya di PM untuk modul tersebut{module.capitalize()}",
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton(
-                        text="Help",
+                        text="Bantuan",
                         url="t.me/{}?start=ghelp_{}".format(
                             context.bot.username, module))
                 ]]))
             return
         update.effective_message.reply_text(
-            "Contact me in PM to get the list of possible commands.",
+            "Hubungi saya di PM untuk melihat modul yang tersedia.",
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton(
-                    text="Help",
+                    text="Bantuan",
                     url="t.me/{}?start=help".format(context.bot.username))
             ]]))
         return
