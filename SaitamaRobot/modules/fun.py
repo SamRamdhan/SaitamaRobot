@@ -24,7 +24,7 @@ def sanitize(update: Update, context: CallbackContext):
     message = update.effective_message
     name = message.reply_to_message.from_user.first_name if message.reply_to_message else message.from_user.first_name
     reply_animation = message.reply_to_message.reply_animation if message.reply_to_message else message.reply_animation
-    reply_animation(GIF_ID, caption=f'*Sanitizes {name}*')
+    reply_animation(GIF_ID, caption=f'*Menyemprot {name}*')
 
 
 @run_async
@@ -33,7 +33,7 @@ def sanitize(update: Update, context: CallbackContext):
     name = message.reply_to_message.from_user.first_name if message.reply_to_message else message.from_user.first_name
     reply_animation = message.reply_to_message.reply_animation if message.reply_to_message else message.reply_animation
     reply_animation(
-        random.choice(fun_strings.GIFS), caption=f'*Sanitizes {name}*')
+        random.choice(fun_strings.GIFS), caption=f'*Menyemprot wajah {name} dengan cairan pembersih dosa*')
 
 
 @run_async
@@ -174,7 +174,7 @@ def bluetext(update: Update, context: CallbackContext):
 
 
 @run_async
-def rlg(update: Update, context: CallbackContext):
+def hina(update: Update, context: CallbackContext):
     eyes = random.choice(fun_strings.EYES)
     mouth = random.choice(fun_strings.MOUTHS)
     ears = random.choice(fun_strings.EARS)
@@ -193,7 +193,7 @@ def decide(update: Update, context: CallbackContext):
 
 
 @run_async
-def eightball(update: Update, context: CallbackContext):
+def bacot(update: Update, context: CallbackContext):
     reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
     reply_text(random.choice(fun_strings.EIGHTBALL))
 
@@ -243,20 +243,20 @@ def weebify(update: Update, context: CallbackContext):
 
 
 __help__ = """
- • `/runs`*:* reply a random string from an array of replies
- • `/slap`*:* slap a user, or get slapped if not a reply
- • `/shrug`*:* get shrug XD
- • `/table`*:* get flip/unflip :v
- • `/decide`*:* Randomly answers yes/no/maybe
- • `/toss`*:* Tosses A coin
- • `/bluetext`*:* check urself :V
- • `/roll`*:* Roll a dice
- • `/rlg`*:* Join ears,nose,mouth and create an emo ;-;
- • `/shout <keyword>`*:* write anything you want to give loud shout
- • `/weebify <text>`*:* returns a weebified text
- • `/sanitize`*:* always use this before /pat or any contact
+ • `/gombal`*:* membalas pesan dengan gombalan
+ • `/slap`*:* geplak pengguna
+ • `/shrug`*:* mana saya tau
+ • `/table`*:* flip/unflip :v
+ • `/decide`*:* jawaban random iya/tidak/mungkin
+ • `/toss`*:* lempar koin
+ • `/bluetext`*:* cek diri anda sendiri:V
+ • `/roll`*:* menampilkan angka dadu
+ • `/hina`*:* memberikan hinaan
+ • `/shout <kata>`*:* tulis apapun yang ingin anda teriakkan
+ • `/weebify <text>`*:* mengembalikan text weebify
+ • `/sanitize`*:* menyemprot cairan suci
  • `/pat`*:* pats a user, or get patted
- • `/8ball`*:* predicts using 8ball method 
+ • `/bacot`*:* halah bacot kau
 """
 
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize)
@@ -267,9 +267,9 @@ ROLL_HANDLER = DisableAbleCommandHandler("roll", roll)
 TOSS_HANDLER = DisableAbleCommandHandler("toss", toss)
 SHRUG_HANDLER = DisableAbleCommandHandler("shrug", shrug)
 BLUETEXT_HANDLER = DisableAbleCommandHandler("bluetext", bluetext)
-RLG_HANDLER = DisableAbleCommandHandler("rlg", rlg)
+RLG_HANDLER = DisableAbleCommandHandler("hina", hina)
 DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
-EIGHTBALL_HANDLER = DisableAbleCommandHandler("8ball", eightball)
+EIGHTBALL_HANDLER = DisableAbleCommandHandler("bacot", eightball)
 TABLE_HANDLER = DisableAbleCommandHandler("table", table)
 SHOUT_HANDLER = DisableAbleCommandHandler("shout", shout)
 WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify)
