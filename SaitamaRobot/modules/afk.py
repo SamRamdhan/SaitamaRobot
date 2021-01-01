@@ -29,14 +29,14 @@ def afk(update: Update, context: CallbackContext):
         reason = args[1]
         if len(reason) > 100:
             reason = reason[:100]
-            notice = "\nYour afk reason was shortened to 100 characters."
+            notice = "\nAlasan AFK hanya boleh sampai 100 huruf."
     else:
         reason = ""
 
     sql.set_afk(update.effective_user.id, reason)
     fname = update.effective_user.first_name
     try:
-        update.effective_message.reply_text("❎ {} Sekarang Afk!{}".format(
+        update.effective_message.reply_text("❌ {} Sekarang Afk!{}".format(
             fname, notice))
     except BadRequest:
         pass
@@ -57,9 +57,9 @@ def no_longer_afk(update: Update, context: CallbackContext):
         firstname = update.effective_user.first_name
         try:
             options = [
-                '☑️ {} sekarang disini!', '☑️ {} sudah tidak AFK!', '☑️ {} sekarang telah muncul!',
-                '☑️ {} telah aktif!', '☑️ {} kembali aktif!', '☑️ {} akhirnya kembali!',
-                'Hai {}, Welkambek', 'Ada yang rindu {}?\ndia sudah tidak AFK!'
+                '✔️ {} sekarang disini!', '✔️ {} sudah tidak AFK!', '✔️ {} sekarang telah muncul!',
+                '✔️ {} telah aktif!', '✔️ {} kembali aktif!', '✔️ {} akhirnya kembali!',
+                'Hai {}, Welkambek 🥳', 'Ada yang rindu {}?\ndia sudah tidak AFK!'
             ]
             chosen_option = random.choice(options)
             update.effective_message.reply_text(chosen_option.format(firstname))
@@ -124,20 +124,20 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if not user.reason:
             if int(userc_id) == int(user_id):
                 return
-            res = "❎ {} sedang AFK".format(fst_name)
+            res = "❌ {} sedang AFK".format(fst_name)
             update.effective_message.reply_text(res)
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "❎ {} sedang AFK.\n📝 Alasannya: <code>{}</code>".format(
+            res = "❌ {} sedang AFK.\n\n📝 Alasannya: <code>{}</code>".format(
                 html.escape(fst_name), html.escape(user.reason))
             update.effective_message.reply_text(res, parse_mode="html")
 
 
 __help__ = """
- • `/afk <reason>`*:* mark yourself as AFK(away from keyboard).
- • `brb <reason>`*:* same as the afk command - but not a command.
-When marked as AFK, any mentions will be replied to with a message to say you're not available!
+ • `/afk <alasan>`*:* menandai anda sedang AFK (away from keyboard).
+ • `brb <alasan>`*:* sama seperti /afk - tapi ini bukan command.
+Ketika anda menandai AFK, setiap mentions akan dibales dengan kalimat bahwa anda sedang AFK!
 """
 
 AFK_HANDLER = DisableAbleCommandHandler("afk", afk)
