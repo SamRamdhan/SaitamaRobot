@@ -59,7 +59,7 @@ Ketik /help untuk melihat perintah yang tersedia.
 """
 
 HELP_STRINGS = """
-Hai kerabat! Nama saya*{}*.
+Hai kerabat! Nama saya *{}*.
 ---------------------
 
 
@@ -83,7 +83,7 @@ SAITAMA_IMG = "https://telegra.ph/file/af956b8a1877561d7362a.jpg"
 DONATE_STRING = """Halo, apakah anda akan berdonasi?
 Pemilik saya pasti akan sangat senang jika anda berdonasi. Semua donasi yang masuk kesini akan digunakan untuk membayar server bot.
 Juga digunakan untuk keperluan grup @KerabatOnline. Seperti dana untuk membuat event dan sebagainya.
-Silahkan beralih ke [Kerabat Bot](https://t.me/KerabatBot), atau langsung hubungi salah satu staff grup [Kerabat Online](https://t.me/KerabatOnline)."""
+Silahkan langsung hubungi salah satu staff grup [Kerabat Online](https://t.me/KerabatOnline) untuk proses transfer donasi."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -201,7 +201,7 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="☑️ Tambahkan Canzu ke Grup Anda",
+                            text="❎ Tidak dapat ditambahkan ❎",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                     ],
@@ -225,7 +225,7 @@ def start(update: Update, context: CallbackContext):
                      ]]))
     else:
         update.effective_message.reply_text(
-            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>"
+            "Bot aktif!\n<b>Aktif semenjak:</b> <code>{}</code>"
             .format(uptime),
             parse_mode=ParseMode.HTML)
 
@@ -344,7 +344,7 @@ def get_help(update: Update, context: CallbackContext):
 
     elif len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
         module = args[1].lower()
-        text = "Here is the available help for the *{}* module:\n".format(HELPABLE[module].__mod_name__) \
+        text = "Ini adalah bantuan untuk modul *{}* :\n".format(HELPABLE[module].__mod_name__) \
                + HELPABLE[module].__help__
         send_help(
             chat.id, text,
@@ -364,7 +364,7 @@ def send_settings(chat_id, user_id, user=False):
                                    for mod in USER_SETTINGS.values())
             dispatcher.bot.send_message(
                 user_id,
-                "These are your current settings:" + "\n\n" + settings,
+                "Ini adalah pengaturan anda:" + "\n\n" + settings,
                 parse_mode=ParseMode.MARKDOWN)
 
         else:
@@ -472,7 +472,7 @@ def get_settings(update: Update, context: CallbackContext):
     # ONLY send settings in PM
     if chat.type != chat.PRIVATE:
         if is_user_admin(chat, user.id):
-            text = "Click here to get this chat's settings, as well as yours."
+            text = "Klik disini untuk cek pengaturan chat ini, serta pengaturan anda."
             msg.reply_text(
                 text,
                 reply_markup=InlineKeyboardMarkup([[
@@ -482,7 +482,7 @@ def get_settings(update: Update, context: CallbackContext):
                             context.bot.username, chat.id))
                 ]]))
         else:
-            text = "Click here to check your settings."
+            text = "Klik disini untuk cek pengaturan anda."
 
     else:
         send_settings(chat.id, user.id, True)
@@ -501,8 +501,8 @@ def donate(update: Update, context: CallbackContext):
 
         if OWNER_ID != 254318997 and DONATION_LINK:
             update.effective_message.reply_text(
-                "You can also donate to the person currently running me "
-                "[here]({})".format(DONATION_LINK),
+                "Atau PM melalui bot grup"
+                "[Kerabat Bot]({})".format(DONATION_LINK),
                 parse_mode=ParseMode.MARKDOWN)
 
     else:
@@ -514,10 +514,10 @@ def donate(update: Update, context: CallbackContext):
                 disable_web_page_preview=True)
 
             update.effective_message.reply_text(
-                "I've PM'ed you about donating to my creator!")
+                "Saya telah mengirim PM ke anda tentang cara berdonasi!")
         except Unauthorized:
             update.effective_message.reply_text(
-                "Contact me in PM first to get donation information.")
+                "Hubungi saya di PM untuk mendapatkan informasi tentang donasi.")
 
 
 def migrate_chats(update: Update, context: CallbackContext):
@@ -531,11 +531,11 @@ def migrate_chats(update: Update, context: CallbackContext):
     else:
         return
 
-    LOGGER.info("Migrating from %s, to %s", str(old_chat), str(new_chat))
+    LOGGER.info("Migrasi dari %s, ke %s", str(old_chat), str(new_chat))
     for mod in MIGRATEABLE:
         mod.__migrate__(old_chat, new_chat)
 
-    LOGGER.info("Successfully migrated!")
+    LOGGER.info("Migrasi sukses!")
     raise DispatcherHandlerStop
 
 
@@ -543,7 +543,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "I am now online!")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Sekarang saya aktif!")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!")
