@@ -60,7 +60,7 @@ Ketik /help untuk melihat perintah yang tersedia.
 
 HELP_STRINGS = """
 Hai kerabat! Nama saya *{}*.
----------------------
+------------------------------------
 
 
 *Perintah Utama* :
@@ -82,7 +82,7 @@ SAITAMA_IMG = "https://telegra.ph/file/af956b8a1877561d7362a.jpg"
 
 DONATE_STRING = """Halo, apakah anda akan berdonasi?
 Pemilik saya pasti akan sangat senang jika anda berdonasi. Semua donasi yang masuk kesini akan digunakan untuk membayar server bot.
-Juga digunakan untuk keperluan grup @KerabatOnline. Seperti dana untuk membuat event dan sebagainya.
+Juga digunakan untuk keperluan grup. Seperti biaya untuk membuat event dan sebagainya.
 Silahkan langsung hubungi salah satu staff grup [Kerabat Online](https://t.me/KerabatOnline) untuk proses transfer donasi."""
 
 IMPORTED = {}
