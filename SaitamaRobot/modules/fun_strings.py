@@ -27,24 +27,24 @@ GIFS = [
 ]
 
 SLAP_SAITAMA_TEMPLATES = (
-    "Slap me one more time and I'll mute you.",
-    "Stop slapping me. REEEEEEEEEEEEEE.",
+    "Siapa sih lu beraninya geplak gue?!.",
+    "Berhenti geplak gue 😠😠😠",
     [
-        "I am muting you for a minute.",  # normal reply
-        "Stop slapping me just because I can't mute you. REEEEEEEEEE.",  # reply to admin
+        "Saya membisukan anda untuk beberapa saat.",  # normal reply
+        "Mentang-mentang anda admin, seenaknya aja geplak saya 😤😤😤",  # reply to admin
         "tmute",  # command
-        "Shut up!",
-        "Silence!"
+        "Diam Kao!",
+        "Terbisukan!"
     ])
 
 SLAP_TEMPLATES = (
-    "{user2} was killed by magic.",
-    "{user2} starved without pats.",
-    "{user2} was knocked into the void by {user1}.",
-    "{user2} fainted.",
-    "{user2} is out of usable Pokemon! {user2} whited out!.",
-    "{user2} is out of usable Pokemon! {user2} blacked out!.",
-    "{user2} got rekt.",
+    "{user2} terjun dari pesawat tanpa parasut.",
+    "{user2} takut melihat dirinya sendiri di cermin.",
+    "{user2} terkapar setelah ditendang oleh {user1}.",
+    "{user2} menjadi gila setelah gagal mendapatkan hatiku wkwkwk.",
+    "{user2} dikutuk menjadi batu oleh {user1}.",
+    "{user2} sedang mencari perhatian namun tidak ada yang peduli. Hahaha mampus!",
+    "{user2} adalah beban keluarga.",
     "{user2}'s melon was split by {user1}.",
     "{user2} was sliced and diced by {user1}.",
     "{user2} played hot-potato with a grenade.",
@@ -145,25 +145,25 @@ SLAP_TEMPLATES = (
 )
 
 PAT_TEMPLATES = (
-    "{user1} pats {user2} on the head.",
-    "*gently rubs {user2}'s head*.",
-    "*{user1} mofumofus {user2}'s head*",
-    "*{user1} messes up {user2}'s head*",
-    "*{user1} intensly rubs {user2}'s head*",
-    "*{user2}'s waifu pats their head*",
-    "*{user2}'s got free headpats*",
-    "No pats for {user2}!",
-    "Oh no! We are all out of pats.",
-    "This is a designated no pat zone!",
-    "No pats for {user2}!",
-    "{user1} spoils {user2} with headpats!",
-    "{user2} received one free headpat!",
-    "{user1} headpats {user2} whilst giving a lap pillow",
-    "{user1} aggressively pats {user2}",
-    "{user1} gently strokes {user2}'s head",
-    "Pat, pat, pat, pat",
-    "{user2} could not escape {user1}'s headpats",
-    "{user2}.exe has stopped working",
+    "{user1} diajak {user2} untuk mesum di hotel mewah.",
+    "{user2} merayu {user1} untuk berciuman.",
+    "{user1} dipaksa {user2} menemaninya bermain kuda-kudaan.",
+    "{user1} diajak ke rumah {user2} untuk bermantap-mantap mania.",
+    "{user2} mengajak {user1} ke rumahnya untuk menghabiskan waktu berdua.",
+    "{user2} sedang sendirian di rumahnya kemudian mengajak {user1} untuk menemaninya.",
+    "{user2} menyewa apartemen mewah untuk tinggal bersama {user1}",
+    "{user1} dipaksa untuk berciuman dengan {user2} di dalam mobil",
+    "{user1} diajak {user2} ke sebuah hotel mewah untuk melakukan sesuatu yang mantap.",
+    "{user2} mulai merayu {user1} dengan manja ketika mereka bertemu.",
+    "{user2} menelpon {user1} untuk mengajaknya datang ke rumahnya yang sedang sepi.",
+    "{user1} di ajak VCS oleh {user2}.",
+    "{user2} mengirim pap seksi ke {user1}.",
+    "{user1} ditarik {user2} masuk ke mobil kemudian mereka berciuman sampai puas.",
+    "{user1} diajak ke kost-an {user2} untuk bermantap-mantap mania.",
+    "{user1} menolak diajak mesum oleh {user2}.",
+    "{user2} mengaku sangat mencintai {user1}.",
+    "{user2} mengajak {user1} bertemu di sebuah hotel untuk melakukan sesuatu yang mantap.",
+    "{user2} sedang sendirian di kost-annya kemudian langsung mengajak {user1} untuk menemaninya.",
     "{user1} rubs {user2} on the neck",
     "Must... extort... HEADPATS",
     "{user1} headpats {user2}'s head with a pat",
@@ -277,7 +277,7 @@ EIGHTBALL = [
     "🟢 Yes – definitely.", "🟢 You may rely on it."
 ]
 
-DECIDE = ("Yes.", "No.", "Maybe.")
+DECIDE = ("Iya.", "Tidak.", "Mungkin.")
 
 TABLE = ("(╯°□°）╯彡 ┻━┻", "I ran out of tables, will order more.",
          "Go do some work instead of flippin tables.")
