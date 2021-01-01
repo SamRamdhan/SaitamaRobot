@@ -126,7 +126,7 @@ def get_id(update: Update, context: CallbackContext):
             user2 = message.reply_to_message.forward_from
 
             msg.reply_text(
-                f"<b>Telegram ID:</b>,"
+                f"<b>ID Telegram:</b>,"
                 f"• {html.escape(user2.first_name)} - <code>{user2.id}</code>.\n"
                 f"• {html.escape(user1.first_name)} - <code>{user1.id}</code>.",
                 parse_mode=ParseMode.HTML)
@@ -135,19 +135,19 @@ def get_id(update: Update, context: CallbackContext):
 
             user = bot.get_chat(user_id)
             msg.reply_text(
-                f"{html.escape(user.first_name)}'s id is <code>{user.id}</code>.",
+                f"id {html.escape(user.first_name)} adalah <code>{user.id}</code>.",
                 parse_mode=ParseMode.HTML)
 
     else:
 
         if chat.type == "private":
             msg.reply_text(
-                f"Your id is <code>{chat.id}</code>.",
+                f"ID anda adalah <code>{chat.id}</code>.",
                 parse_mode=ParseMode.HTML)
 
         else:
             msg.reply_text(
-                f"This group's id is <code>{chat.id}</code>.",
+                f"ID grup ini adalah <code>{chat.id}</code>.",
                 parse_mode=ParseMode.HTML)
 
 
@@ -224,19 +224,19 @@ def info(update: Update, context: CallbackContext):
         return
 
     rep = message.reply_text(
-        "<code>Appraising...</code>", parse_mode=ParseMode.HTML)
+        "<code>Menilai...</code>", parse_mode=ParseMode.HTML)
 
-    text = (f"╒═══「<b> Appraisal results:</b> 」\n"
+    text = (f"╒═══「<b> Hasil penilaian:</b> 」\n"
             f"ID: <code>{user.id}</code>\n"
-            f"First Name: {html.escape(user.first_name)}")
+            f"Nama Depan: {html.escape(user.first_name)}")
 
     if user.last_name:
-        text += f"\nLast Name: {html.escape(user.last_name)}"
+        text += f"\nNama Belakang: {html.escape(user.last_name)}"
 
     if user.username:
         text += f"\nUsername: @{html.escape(user.username)}"
 
-    text += f"\nPermalink: {mention_html(user.id, 'link')}"
+    text += f"\nLink Akun: {mention_html(user.id, 'link')}"
 
     if chat.type != "private" and user_id != bot.id:
         _stext = "\nPresence: <code>{}</code>"
@@ -255,7 +255,7 @@ def info(update: Update, context: CallbackContext):
                     text += _stext.format("Admin")
     if user_id not in [bot.id, 777000, 1087968824]:
         userhp = hpmanager(user)
-        text += f"\n\n<b>Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
+        text += f"\n\n<b>Kekuatan:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
 
     try:
         spamwtc = sw.get_ban(int(user.id))
@@ -271,7 +271,7 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThe Disaster level of this person is 'God'."
+        text += "\n\nLevel pengguna ini adalah 'Dewa'."
         disaster_level_present = True
     elif user.id in DEV_USERS:
         text += "\n\nThis user is member of 'Hero Association'."
@@ -290,7 +290,7 @@ def info(update: Update, context: CallbackContext):
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://t.me/OnePunchUpdates/155">?</a>]'.format(
+        text += ' [<a href="https://t.me/canzu/29">???</a>]'.format(
             bot.username)
 
     try:
