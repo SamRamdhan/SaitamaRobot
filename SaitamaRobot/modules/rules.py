@@ -34,7 +34,7 @@ def send_rules(update, chat_id, from_pm=False):
             raise
 
     rules = sql.get_rules(chat_id)
-    text = f"The rules for *{escape_markdown(chat.title)}* are:\n\n{rules}"
+    text = f"Peraturan grup *{escape_markdown(chat.title)}* adalah:\n\n{rules}"
 
     if from_pm and rules:
         bot.send_message(
@@ -45,19 +45,19 @@ def send_rules(update, chat_id, from_pm=False):
     elif from_pm:
         bot.send_message(
             user.id,
-            "The group admins haven't set any rules for this chat yet. "
-            "This probably doesn't mean it's lawless though...!")
+            "Untuk melihat peraturan grup Kerabat Online "
+            "silahkan cek #peraturan")
     elif rules:
         update.effective_message.reply_text(
-            "Please click the button below to see the rules.",
+            "Silahkan klik tombol dibawah untuk melihat peraturan grup.",
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton(
-                    text="Rules", url=f"t.me/{bot.username}?start={chat_id}")
+                    text="Klik Disini", url=f"t.me/{bot.username}?start={chat_id}")
             ]]))
     else:
         update.effective_message.reply_text(
-            "The group admins haven't set any rules for this chat yet. "
-            "This probably doesn't mean it's lawless though...!")
+            "Untuk melihat peraturan grup Kerabat Online"
+            "silahkan cek #peraturan")
 
 
 @run_async
@@ -77,7 +77,7 @@ def set_rules(update: Update, context: CallbackContext):
 
         sql.set_rules(chat_id, markdown_rules)
         update.effective_message.reply_text(
-            "Successfully set rules for this group.")
+            "Peraturan sukses ditambahkan.")
 
 
 @run_async
@@ -107,14 +107,14 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
- • `/rules`*:* get the rules for this chat.
+ • `/rules`*:* menampilkan peraturan grup.
 
-*Admins only:*
- • `/setrules <your rules here>`*:* set the rules for this chat.
- • `/clearrules`*:* clear the rules for this chat.
+*Hanya admin:*
+ • `/setrules <peraturan disini>`*:* menambahkan peraturan grup.
+ • `/clearrules`*:* menghapus peraturan grup.
 """
 
-__mod_name__ = "Rules"
+__mod_name__ = "Peraturan"
 
 GET_RULES_HANDLER = CommandHandler("rules", get_rules, filters=Filters.group)
 SET_RULES_HANDLER = CommandHandler("setrules", set_rules, filters=Filters.group)
