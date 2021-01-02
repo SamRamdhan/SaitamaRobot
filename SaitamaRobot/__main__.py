@@ -501,7 +501,7 @@ def donate(update: Update, context: CallbackContext):
 
         if OWNER_ID != 254318997 and DONATION_LINK:
             update.effective_message.reply_text(
-                "Atau PM melalui bot grup"
+                "Atau PM melalui bot grup "
                 "[Kerabat Bot]({})".format(DONATION_LINK),
                 parse_mode=ParseMode.MARKDOWN)
 
