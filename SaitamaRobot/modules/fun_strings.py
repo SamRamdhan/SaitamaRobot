@@ -30,7 +30,7 @@ SLAP_SAITAMA_TEMPLATES = (
     "Siapa sih lu beraninya geplak gue?!.",
     "Berhenti geplak gue 😠😠😠",
     [
-        "Saya membisukan anda untuk beberapa saat.",  # normal reply
+        "Saya akan membisukan anda untuk beberapa saat.",  # normal reply
         "Mentang-mentang anda admin, seenaknya aja geplak saya 😤😤😤",  # reply to admin
         "tmute",  # command
         "Diam Kao!",
