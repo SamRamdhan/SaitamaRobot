@@ -92,7 +92,7 @@ def gettime(update: Update, context: CallbackContext):
 __help__ = """
  • `/time <instruksi>`*:* Memberikan informasi zona waktu
 
-*Intruksi tersedia:* Kode Negara/Nama Negara/Zona Waktu
+*Instruksi tersedia:* Kode Negara/Nama Negara/Zona Waktu
 • 🕐 [Daftar zona waktu](https://id.wikipedia.org/wiki/List_of_tz_database_time_zones)
 """
 
@@ -100,6 +100,6 @@ TIME_HANDLER = DisableAbleCommandHandler("time", gettime)
 
 dispatcher.add_handler(TIME_HANDLER)
 
-__mod_name__ = "Time"
+__mod_name__ = "Waktu"
 __command_list__ = ["time"]
 __handlers__ = [TIME_HANDLER]
