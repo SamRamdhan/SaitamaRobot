@@ -350,7 +350,7 @@ def adminlist(update, context):
 
     if update.effective_message.chat.type == "private":
         send_message(update.effective_message,
-                     "This command only works in Groups.")
+                     "Perintah ini hanya tersedia di grup.")
         return
 
     chat = update.effective_chat
@@ -359,13 +359,13 @@ def adminlist(update, context):
 
     try:
         msg = update.effective_message.reply_text(
-            'Fetching group admins...', parse_mode=ParseMode.HTML)
+            'Proses...', parse_mode=ParseMode.HTML)
     except BadRequest:
         msg = update.effective_message.reply_text(
-            'Fetching group admins...', quote=False, parse_mode=ParseMode.HTML)
+            'Proses...', quote=False, parse_mode=ParseMode.HTML)
 
     administrators = bot.getChatAdministrators(chat_id)
-    text = "Admins in <b>{}</b>:".format(
+    text = "Daftar staff grup <b>{}</b>:".format(
         html.escape(update.effective_chat.title))
 
     bot_admin_list = []
@@ -392,13 +392,13 @@ def adminlist(update, context):
         #if user.username:
         #    name = escape_markdown("@" + user.username)
         if status == "creator":
-            text += "\n 👑 Creator:"
+            text += "\n 😎 Pemilik:"
             text += "\n<code> • </code>{}\n".format(name)
 
             if custom_title:
                 text += f"<code> ┗━ {html.escape(custom_title)}</code>\n"
 
-    text += "\n🔱 Admins:"
+    text += "\n💠 Staff:"
 
     custom_admin_list = {}
     normal_admin_list = []
@@ -443,7 +443,7 @@ def adminlist(update, context):
             text += "\n<code> • </code>{}".format(admin)
         text += "\n"
 
-    text += "\n🤖 Bots:"
+    text += "\n🤖 Botmin:"
     for each_bot in bot_admin_list:
         text += "\n<code> • </code>{}".format(each_bot)
 
