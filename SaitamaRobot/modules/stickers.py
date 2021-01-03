@@ -24,7 +24,7 @@ def stickerid(update: Update, context: CallbackContext):
         update.effective_message.reply_text(
             "Hai " +
             f"{mention_html(msg.from_user.id, msg.from_user.first_name)}" +
-            ", ID stiker yang kamu balas itu adalah:\n <code>" +
+            ", ID stikernya adalah:\n <code>" +
             escape(msg.reply_to_message.sticker.file_id) + "</code>",
             parse_mode=ParseMode.HTML,
         )
