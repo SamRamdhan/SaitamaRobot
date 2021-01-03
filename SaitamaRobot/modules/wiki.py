@@ -18,7 +18,7 @@ def wiki(update: Update, context: CallbackContext):
         res = wikipedia.summary(search)
     except DisambiguationError as e:
         update.message.reply_text(
-            "Halaman tidak ditemukan! Sesuaikan intruksi anda.\n<i>{}</i>"
+            "Halaman tidak ditemukan! Sesuaikan instruksi anda.\n<i>{}</i>"
             .format(e),
             parse_mode=ParseMode.HTML)
     except PageError as e:
