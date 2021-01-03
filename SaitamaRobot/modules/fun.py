@@ -99,19 +99,19 @@ def mesum(update: Update, context: CallbackContext):
 
     reply_to = message.reply_to_message if message.reply_to_message else message
 
-    curr_user = html.escape(message.from_user.first_name)
+    curr_user = "@" + html.escape(message.from_user.username)
     user_id = extract_user(message, args)
 
     if user_id:
         patted_user = bot.get_chat(user_id)
         user1 = curr_user
-        user2 = html.escape(patted_user.first_name)
+        user2 = "@" + html.escape(patted_user.username)
 
     else:
-        user1 = bot.first_name
+        user1 = "@" + bot.username
         user2 = curr_user
 
-    pat_type = random.choice(("Text", "Gif", "Sticker"))
+    pat_type = random.choice(("Text"))
     if pat_type == "Gif":
         try:
             temp = random.choice(fun_strings.PAT_GIFS)
