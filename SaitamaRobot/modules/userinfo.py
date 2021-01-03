@@ -271,26 +271,26 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nLevel pengguna ini adalah 'Dewa'."
+        text += "\n\nJabatan pengguna ini adalah 'Ketua RT'."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is member of 'Hero Association'."
+        text += "\n\nJulukan pengguna ini adalah 'Dewa'."
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\nThe Disaster level of this person is 'Dragon'."
+        text += "\n\nPengguna ini adalah 'Boss Saya'."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nThe Disaster level of this person is 'Demon'."
+        text += "\n\nJulukan pengguna ini adalah 'Orang Spesial'."
         disaster_level_present = True
     elif user.id in TIGERS:
-        text += "\n\nThe Disaster level of this person is 'Tiger'."
+        text += "\n\nJulukan pengguna ini adalah 'Warga Lama'."
         disaster_level_present = True
     elif user.id in WOLVES:
-        text += "\n\nThe Disaster level of this person is 'Wolf'."
+        text += "\n\nJulukan pengguna ini adalah 'Warga Teladan'."
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://t.me/canzu/29">???</a>]'.format(
+        text += ' [<a href="https://t.me/canzu/30">???</a>]'.format(
             bot.username)
 
     try:
@@ -486,37 +486,37 @@ def __user_info__(user_id):
     me = html.escape(sql.get_user_me_info(user_id) or "")
     result = ""
     if me:
-        result += f"<b>About user:</b>\n{me}\n"
+        result += f"<b>Tentang Pengguna:</b>\n{me}\n"
     if bio:
-        result += f"<b>What others say:</b>\n{bio}\n"
+        result += f"<b>Apa yang orang katakan:</b>\n{bio}\n"
     result = result.strip("\n")
     return result
 
 
 __help__ = """
 *ID:*
- • `/id`*:* get the current group id. If used by replying to a message, gets that user's id.
- • `/gifid`*:* reply to a gif to me to tell you its file ID.
+ • /id*:* menampilkan id pengguna atau id grup
+ • /gifid*:* balas gif untuk menampilkan id
 
-*Self addded information:* 
- • `/setme <text>`*:* will set your info
- • `/me`*:* will get your or another user's info.
-Examples:
- `/setme I am a wolf.`
- `/me @username(defaults to yours if no user specified)`
+*Informasi yang ditambahkan sendiri:* 
+ • /setme <teks>*:* mengatur informasi tentang anda
+ • /me*:* menampilkan informasi anda atau orang lain
+Contoh:
+ `/setme Aku adalah anak gembala.`
+ `/me @username(akan menampilkan info pengguna)`
 
-*Information others add on you:* 
- • `/bio`*:* will get your or another user's bio. This cannot be set by yourself.
-• `/setbio <text>`*:* while replying, will save another user's bio 
-Examples:
- `/bio @username(defaults to yours if not specified).`
- `/setbio This user is a wolf` (reply to the user)
+*Informasi yang ditambahkan orang lain kepada anda:* 
+ • /bio*:* menampilkan biografi anda atau orang lain (ini tidak dapat ditambahkan sendiri)
+ • /setbio <teks>*:* akan menambahkan bio orang lain (ketika membalas pesan orang lain)
+Contoh:
+ /bio @username(akan mengarah ke biografi anda jika tidak mengarah ke pengguna yang spesifik).
+ `/setbio Pengguna ini adalah mantan pacar saya` (balas pesan pengguna tersebut)
 
-*Overall Information about you:*
- • `/info`*:* get information about a user. 
+*Semua informasi tentang anda:*
+ • /info*:* menampilkan informasi pengguna. 
  
-*What is that health thingy?*
- Come and see [HP System explained](https://t.me/OnePunchUpdates/192)
+*Apa itu jabatan dan julukan?*
+ Silahkan anda [Lihat disini](https://t.me/canzu/30)
 """
 
 SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio)
