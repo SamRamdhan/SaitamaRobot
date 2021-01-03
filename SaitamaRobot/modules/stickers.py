@@ -376,7 +376,7 @@ def makepack_internal(
             success = context.bot.create_new_sticker_set(
                 user.id,
                 packname,
-                f"koleksi {name}" + extra_version,
+                f"Koleksi @{name}" + extra_version,
                 png_sticker=png_sticker,
                 emojis=emoji,
             )
@@ -384,7 +384,7 @@ def makepack_internal(
             success = context.bot.create_new_sticker_set(
                 user.id,
                 packname,
-                f"{name} pack animasi" + extra_version,
+                f"@{name} pack animasi" + extra_version,
                 tgs_sticker=tgs_sticker,
                 emojis=emoji,
             )
