@@ -51,7 +51,7 @@ def extract_user_and_text(message: Message,
         user_id = get_user_id(user)
         if not user_id:
             message.reply_text(
-                "Anda tidak bisa memberi tindakan dengan cara seperti iitu. "
+                "Anda tidak bisa memberi tindakan dengan cara seperti itu. "
                 "Anda hanya bisa berinteraksi dengan membalas pesan seseorang atau meneruskan salah satu pesannya."
             )
             return None, None
