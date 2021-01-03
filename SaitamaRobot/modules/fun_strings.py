@@ -27,13 +27,13 @@ GIFS = [
 ]
 
 SLAP_SAITAMA_TEMPLATES = (
-    "Siapa sih lu beraninya geplak gue?!.",
-    "Berhenti geplak gue 😠😠😠",
+    "Anda siapa?? Berani-beraninya slap saya?!",
+    "Berhenti slap saya 😠😠😠",
     [
         "Saya akan membisukan anda untuk beberapa saat.",  # normal reply
-        "Mentang-mentang anda admin, seenaknya aja geplak saya 😤😤😤",  # reply to admin
+        "Berutung anda adalah admin, jadi saya tidak bisa membisukan anda 😤😤😤",  # reply to admin
         "tmute",  # command
-        "Diam Kao!",
+        "Diam Anda!",
         "Terbisukan!"
     ])
 
@@ -83,65 +83,65 @@ SLAP_TEMPLATES = (
     "{user2} patah hati setelah aku memutuskan dia.",
     "Sebuah tamparan keras mendarat dengan mulus di wajah {user2}.",
     "Cie cie cie {user2} sedang jatuh cinta sama seseorang.",
-    "*points at {user2}* What's with this sassy... lost child?.",
-    "*Hits {user2} with a Fire Tornado*.",
-    "{user1} pokes {user2} in the eye !",
-    "{user1} pokes {user2} on the sides!",
-    "{user1} pokes {user2}!",
-    "{user1} pokes {user2} with a needle!",
-    "{user1} pokes {user2} with a pen!",
-    "{user1} pokes {user2} with a stun gun!",
-    "{user2} is secretly a Furry!",
-    "Hey Everybody! {user1} is asking me to be mean!",
-    "( ･_･)ﾉ⌒●~* (･.･;) <-{user2}",
-    "Take this {user2}\n(ﾉﾟДﾟ)ﾉ ))))●~* ",
-    "Here {user2} hold this\n(｀・ω・)つ ●~＊",
-    "( ・_・)ノΞ●~*  {user2}\nDieeeee!!.",
-    "( ・∀・)ｒ鹵~<≪巛;ﾟДﾟ)ﾉ\n*Bug sprays {user2}*.",
-    "( ﾟДﾟ)ﾉ占~<巛巛巛.\n-{user2} You pest!",
-    "( う-´)づ︻╦̵̵̿╤── \(˚☐˚”)/ {user2}.",
-    "{user1} {hits} {user2} with a {item}.",
-    "{user1} {hits} {user2} in the face with a {item}.",
-    "{user1} {hits} {user2} around a bit with a {item}.",
-    "{user1} {throws} a {item} at {user2}.",
-    "{user1} grabs a {item} and {throws} it at {user2}'s face.",
-    "{user1} launches a {item} in {user2}'s general direction.",
-    "{user1} starts slapping {user2} silly with a {item}.",
-    "{user1} pins {user2} down and repeatedly {hits} them with a {item}.",
-    "{user1} grabs up a {item} and {hits} {user2} with it.",
-    "{user1} ties {user2} to a chair and {throws} a {item} at them.",
-    "{user1} gave a friendly push to help {user2} learn to swim in lava.",
-    "{user1} bullied {user2}.",
-    "Nyaan ate {user2}'s leg. *nomnomnom*",
-    "{user1} {throws} a master ball at {user2}, resistance is futile.",
-    "{user1} hits {user2} with an action beam...bbbbbb (ง・ω・)ง ====*",
-    "{user1} ara ara's {user2}.",
-    "{user1} ora ora's {user2}.",
-    "{user1} muda muda's {user2}.",
-    "{user2} was turned into a Jojo reference!",
-    "{user1} hits {user2} with {item}.",
-    "Round 2!..Ready? .. FIGHT!!",
-    "WhoPixel will oof {user2} to infinity and beyond.",
-    "{user2} ate a bat and discovered a new disease.",
-    "{user1} folded {user2} into a paper plane",
-    "{user1} served {user2} some bat soup.",
-    "{user2} was sent to his home, the planet of the apes.",
-    "{user1} kicked {user2} out of a moving train.",
-    "{user2} just killed John Wick’s dog.",
-    "{user1} performed an Avada Kedavra spell on {user2}.",
-    "{user1} subjected {user2} to a fiery furnace.",
-    "Sakura Haruno just got more useful than {user2}",
-    "{user1} unplugged {user2}'s life support.",
-    "{user1} subscribed {user2}' to 5 years of bad internet.",
-    "You know what’s worse than Dad jokes? {user2}!",
-    "{user1} took all of {user2}'s cookies.",
-    "{user2} wa mou.......Shindeiru! - {user1}.",
-    "{user2} lost his race piece!",  #No game no life reference
-    "Shut up {user2}, you are just {user2}.",  #No game no life reference
-    "{user1} hits {user2} with Aka si anse!",  #No game no life reference
-    "@NeoTheKitty scratches {user2}",  #Pixels pet cat - @NeoTheKitty 
-    "Majin buu ate {user2}",  #Dbz
-    "Goblin slayer slays {user2}",  #Goblin Slayer
+    "{user2} terbaring lemas setelah mendapat pukulan dari {user1}",
+    "{user2} dikejar satpol PP karena ngamen di lampu merah.",
+    "{user1} {throws} sebuah {item} ke {user2}!",
+    "{user1} mengikat {user2} di kursi kemudian {throws} sebuah {item} ke wajah {user2}",
+    "{user1} {hits} {user2} dengan sebuah {item}",
+    "{user1} mengikat {user2} ke sebuah helikopter yang akan terbang.",
+    "{user1} mendorong {user2} ke dalam kawah gunung merapi",
+    "{user1} menembak {user2} menggunakan rudal.",
+    "{user2} hangus karena tersambar petir.",
+    "{user1} mengambil shotgun dan langsung menembak {user2}",
+    "{user2} dipaksa menonton semua konten Atta Halilintar.",
+    "{user2} diikat ke tiang listrik kemudian digelitiki",
+    "{user2} frustasi setelah cintanya ditolak {user1}",
+    "{user2} berteriak *AKU SAYANG BANGET SAMA DIA* sambil menunjuk {user1}.",
+    "{user2} diborgol oleh {user1} disuruh push up.",
+    "{user1} memasukkan petasan ke dalam kue yang dimakan {user2}",
+    "{user2} terjebak kedalam jebakan FRIENDZONE.",
+    "{user1} {hits} {user2} dengan sebuah {item}.",
+    "{user1} {hits} wajah {user2} menggunakan {item}.",
+    "{user1} {hits} {user2} dengan keras menggunakan {item}.",
+    "{user1} {throws} sebuah {item} ke kepala {user2}.",
+    "{user1} meraih sebuah {item} dan {throws} itu ke wajah {user2}.",
+    "{user1} meraih sebuah {item} kemudian menggeplak {user2} menggunakan itu.",
+    "{user1} mengaktikfan hotspot milik {user2} kemudian dihabiskan untuk menonton youtube.",
+    "{user1} mengikat {user2} ke pagar kemudian memukulnya dengan {item}.",
+    "{user1} mengambil {item} dan {hits} {user2} dengan itu.",
+    "{user1} mengikat {user2} ke tiang kemudian {throws} sebuah {item} ke arahnya.",
+    "{user1} memanggil semua warga untuk mengeroyok {user2}.",
+    "{user1} mengikat tubuh {user2} ke rel kereta.",
+    "{user2} sekarat setelah menelan pahitnya realita.",
+    "{user1} {throws} botol marjan ke wajah {user2}.",
+    "{user1} menarik telinga {user2} hingga putus.",
+    "{user1} menghempaskan {user2} hingga terpuruk ke dalam kesunyian.",
+    "{user1} mendorong {user2} hingga terjatuh dan tak bisa bangkit lagi.",
+    "{user1} mengunci {user2} di dalam kamar mandi sekolah.",
+    "{user2} menangis ketika melihat crushnya lebih memilih orang lain.",
+    "{user1} melempar {user2} menggunakan {item}.",
+    "{user2} langsung tepar setelah mendapat tendangan dari {user1}",
+    "{user2} pingsan setelah mencium aroma kentut {user1}.",
+    "{user2} diputuskan oleh pacarnya ketika sedang sayang-sayangnya.",
+    "{user1} mengoleskan hot cream ke wajah {user2}",
+    "{user1} berdiri didepan {user2} kemudian kentut.",
+    "{user2} sekarat setelah terkena rasengan naruto.",
+    "{user1} menyebarkan semua aib {user2} ke sosial media.",
+    "{user2} ditabrak oleh {user1} menggunakan mobil damkar.",
+    "{user1} mengutuk {user2} menjadi obat nyamuk bakar.",
+    "{user1} berlari mengejar {user2} sambil berteriak MALING, MALING!!",
+    "{user2} mendapat dihukum *HARUS TIDUR MEMAKAI SELIMUT TAPI KAKINYA DILUAR*",
+    "{user1} menarik semua bulu hidung {user2}.",
+    "{user1} mengikat {user2} menggunakan kawat duri.",
+    "Lihat siapa itu yang dikeroyok massa? Oh ternyata {user2}!",
+    "{user1} menggantung {user2} di tiang listrik.",
+    "{user2} sangat sekarat terkena pukulan maut {user1}.",
+    "{user2} ditangkap polisi karena ngomong ANJAY!",  #No game no life reference
+    "Hei {user2} ingat, kau itu cuma beban keluarga.",  #No game no life reference
+    "{user1} menembak {user2} menggunakan senapan burung!",  #No game no life reference
+    "Seluruh umat manusia mengeroyok {user2}",  #Pixels pet cat - @NeoTheKitty 
+    "Sebuah tank menembak {user2} hingga tubuhnya hancur",  #Dbz
+    "Peri cinta menjodohkan {user2} dengan buaya putih",  #Goblin Slayer
 )
 
 PAT_TEMPLATES = (
@@ -183,12 +183,12 @@ PAT_TEMPLATES = (
 )
 
 PAT_GIFS = (
-    "CgACAgQAAxkBAAOjX--zU1USssZs6aJpRwInmjBkm54AAlsCAALL8aRRwlF9EP36M54eBA",
-    "CgACAgQAAxkBAAOkX--zVfHULCRc7c4mk8MuJmzrmcwAAqMCAALXDqVRGJZqDusDYxweBA")
+    "CgACAgQAAxkBAAIBAl_yIZVFBsCNHhem4kXF7DRr1y-6AAIpAgACcoiMUhUCn3CzQjZxHgQ",
+    "CgACAgQAAxkBAAP8X_IhN7rVtoUeEW0SD6DejRvbbeAAAo8CAAIjt5RSI3VAq8BGW-QeBA")
 
 PAT_STICKERS = (
-    "CAACAgUAAxkBAAFtT0Bf77IL9Vk4_cuISmpT51-KFlRVpQACCAEAArmfiFct6caq6uXN4h4E",
-    "CAACAgUAAxkBAAFtT01f77JY0YCxBVfmsCJmaGI78SiAEwACRgEAAk4egVeD-sy8FD0AAXweBA")
+    "CAACAgEAAxkBAAIBCF_yIjL_oCojftAXXqYZtO9dG4UfAAIzAAPKtyI1Qci1agABOE56HgQ",
+    "CAACAgEAAxkBAAIBBV_yIhapzYTp5gOROQFLQepz2J4wAAJEAAPKtyI1iqQQZS-VI18eBA")
 
 PING_STRING = (
     "PONG!!",
