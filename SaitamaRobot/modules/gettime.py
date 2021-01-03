@@ -90,7 +90,7 @@ def gettime(update: Update, context: CallbackContext):
 
 
 __help__ = """
- • `/time <intruksi>`*:* Memberikan informasi zona waktu
+ • `/time <instruksi>`*:* Memberikan informasi zona waktu
 
 *Intruksi tersedia:* Kode Negara/Nama Negara/Zona Waktu
 • 🕐 [Daftar zona waktu](https://id.wikipedia.org/wiki/List_of_tz_database_time_zones)
