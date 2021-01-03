@@ -60,7 +60,7 @@ def list_handlers(update, context):
     if not conn is False:
         chat_id = conn
         chat_name = dispatcher.bot.getChat(conn).title
-        filter_list = "*Filter in {}:*\n"
+        filter_list = "*Filter yang ada di {}:*\n"
     else:
         chat_id = update.effective_chat.id
         if chat.type == "private":
@@ -68,13 +68,13 @@ def list_handlers(update, context):
             filter_list = "*local filters:*\n"
         else:
             chat_name = chat.title
-            filter_list = "*Filters in {}*:\n"
+            filter_list = "*Filter yang ada di {}*:\n"
 
     all_handlers = sql.get_chat_triggers(chat_id)
 
     if not all_handlers:
         send_message(update.effective_message,
-                     "No filters saved in {}!".format(chat_name))
+                     "Tidak ada filter yang tersimpan di {}!".format(chat_name))
         return
 
     for keyword in all_handlers:
@@ -121,7 +121,7 @@ def filters(update, context):
     if not msg.reply_to_message and len(args) < 2:
         send_message(
             update.effective_message,
-            "Please provide keyboard keyword for this filter to reply with!",
+            "Harap berikan kata kunci untuk balasan filter ini!",
         )
         return
 
@@ -129,7 +129,7 @@ def filters(update, context):
         if len(args) < 2:
             send_message(
                 update.effective_message,
-                "Please provide keyword for this filter to reply with!",
+                "Harap berikan kata kunci untuk balasan filter ini!",
             )
             return
         else:
@@ -177,7 +177,7 @@ def filters(update, context):
     elif not text and not file_type:
         send_message(
             update.effective_message,
-            "Please provide keyword for this filter reply with!",
+            "Harap berikan kata kunci untuk balasan filter ini!",
         )
         return
 
@@ -202,7 +202,7 @@ def filters(update, context):
             return
 
     else:
-        send_message(update.effective_message, "Invalid filter!")
+        send_message(update.effective_message, "Filter tidak valid!")
         return
 
     add = addnew_filter(update, chat_id, keyword, text, file_type, file_id,
@@ -213,7 +213,7 @@ def filters(update, context):
     if add is True:
         send_message(
             update.effective_message,
-            "Saved filter '{}' in *{}*!".format(keyword, chat_name),
+            "Menyimpan filter '{}' di *{}*!".format(keyword, chat_name),
             parse_mode=telegram.ParseMode.MARKDOWN,
         )
     raise DispatcherHandlerStop
@@ -253,7 +253,7 @@ def stop_filter(update, context):
             sql.remove_filter(chat_id, args[1])
             send_message(
                 update.effective_message,
-                "Okay, I'll stop replying to that filter in *{}*.".format(
+                "Oke, saya berhenti menjawab filter *{}*.".format(
                     chat_name),
                 parse_mode=telegram.ParseMode.MARKDOWN,
             )
@@ -261,7 +261,7 @@ def stop_filter(update, context):
 
     send_message(
         update.effective_message,
-        "That's not a filter - Click: /filters to get currently active filters.",
+        "Itu bukan filter - Klik: /filters untuk menampilkan filter yang tersedia.",
     )
 
 
