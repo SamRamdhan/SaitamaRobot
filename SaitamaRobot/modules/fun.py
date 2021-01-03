@@ -111,7 +111,7 @@ def mesum(update: Update, context: CallbackContext):
         user1 = "@" + bot.username
         user2 = curr_user
 
-    pat_type = random.choice(("Text"))
+    pat_type = random.choice(("Text", "Gif", "Sticker"))
     if pat_type == "Gif":
         try:
             temp = random.choice(fun_strings.PAT_GIFS)
