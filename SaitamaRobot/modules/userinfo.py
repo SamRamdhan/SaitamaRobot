@@ -164,7 +164,7 @@ async def group_info(event) -> None:
         ch_full = await event.client(GetFullChannelRequest(channel=entity))
     except:
         await event.reply(
-            "Can't for some reason, maybe it is a private one or that I am banned there."
+            "Tidak bisa karena alasan tertentu, mungkin disana pribadi atau saya tidak diizinkan disana."
         )
         return
     msg = f"**ID**: `{entity.id}`"
@@ -192,11 +192,11 @@ def gifid(update: Update, context: CallbackContext):
     msg = update.effective_message
     if msg.reply_to_message and msg.reply_to_message.animation:
         update.effective_message.reply_text(
-            f"Gif ID:\n<code>{msg.reply_to_message.animation.file_id}</code>",
+            f"ID gif-nya adalah:\n<code>{msg.reply_to_message.animation.file_id}</code>",
             parse_mode=ParseMode.HTML)
     else:
         update.effective_message.reply_text(
-            "Please reply to a gif to get its ID.")
+            "Harap balas gif untuk menampilkan ID-nya.")
 
 
 @run_async
@@ -217,7 +217,7 @@ def info(update: Update, context: CallbackContext):
         (len(args) >= 1 and not args[0].startswith("@") and
          not args[0].isdigit() and
          not message.parse_entities([MessageEntity.TEXT_MENTION]))):
-        message.reply_text("I can't extract a user from this.")
+        message.reply_text("Saya tidak dapat ekstrak pengguna dari ini.")
         return
 
     else:
@@ -239,7 +239,7 @@ def info(update: Update, context: CallbackContext):
     text += f"\nLink Akun: {mention_html(user.id, 'link')}"
 
     if chat.type != "private" and user_id != bot.id:
-        _stext = "\nPresence: <code>{}</code>"
+        _stext = "\nKehadiran: <code>{}</code>"
 
         afk_st = is_afk(user.id)
         if afk_st:
@@ -248,21 +248,21 @@ def info(update: Update, context: CallbackContext):
             status = status = bot.get_chat_member(chat.id, user.id).status
             if status:
                 if status in {"left", "kicked"}:
-                    text += _stext.format("Not here")
+                    text += _stext.format("Tidak disini")
                 elif status == "member":
                     text += _stext.format("Detected")
                 elif status in {"administrator", "creator"}:
                     text += _stext.format("Admin")
     if user_id not in [bot.id, 777000, 1087968824]:
         userhp = hpmanager(user)
-        text += f"\n\n<b>Kekuatan:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
+        text += f"\n\n<b>Siapa dia?</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
 
     try:
         spamwtc = sw.get_ban(int(user.id))
         if spamwtc:
-            text += "\n\n<b>This person is Spamwatched!</b>"
-            text += f"\nReason: <pre>{spamwtc.reason}</pre>"
-            text += "\nAppeal at @SpamWatchSupport"
+            text += "\n\n<b>Pengguna ini spammer!</b>"
+            text += f"\nAlasan: <pre>{spamwtc.reason}</pre>"
+            text += "\nLakukan banding di @SpamWatchSupport"
         else:
             pass
     except:
@@ -360,10 +360,10 @@ def about_me(update: Update, context: CallbackContext):
     elif message.reply_to_message:
         username = message.reply_to_message.from_user.first_name
         update.effective_message.reply_text(
-            f"{username} hasn't set an info message about themselves yet!")
+            f"{username} belum mengatur informasi tentang dirinya!")
     else:
         update.effective_message.reply_text(
-            "There isnt one, use /setme to set one.")
+            "Tidak ada informasi, gunakan /setme untuk menambahkan informasi.")
 
 
 @run_async
@@ -431,11 +431,11 @@ def about_bio(update: Update, context: CallbackContext):
     elif message.reply_to_message:
         username = user.first_name
         update.effective_message.reply_text(
-            f"{username} hasn't had a message set about themselves yet!\nSet one using /setbio"
+            f"{username} belum mengatur biografinya!\nGunakan /setbio untuk menambahkan biografi"
         )
     else:
         update.effective_message.reply_text(
-            "You haven't had a bio set about yourself yet!")
+            "Anda belum mengatur biografi anda!")
 
 
 @run_async
@@ -450,7 +450,7 @@ def set_about_bio(update: Update, context: CallbackContext):
 
         if user_id == message.from_user.id:
             message.reply_text(
-                "Ha, you can't set your own bio! You're at the mercy of others here..."
+                "Hah, anda tidak bisa menambahkan biografi anda sendiri! Suruh orang lain disini melakukan itu..."
             )
             return
 
@@ -460,7 +460,7 @@ def set_about_bio(update: Update, context: CallbackContext):
 
         if user_id == bot.id and sender_id not in DEV_USERS:
             message.reply_text(
-                "Erm... yeah, I only trust Heroes Association to set my bio.")
+                "Hah... yeah, hanya Dewa yang bisa mengatur bio Saya!")
             return
 
         text = message.text
