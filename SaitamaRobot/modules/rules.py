@@ -57,7 +57,7 @@ def send_rules(update, chat_id, from_pm=False):
     else:
         update.effective_message.reply_text(
             "Untuk melihat peraturan grup Kerabat Online"
-            "silahkan cek #peraturan")
+            " silahkan cek #peraturan")
 
 
 @run_async
@@ -107,11 +107,11 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
- • `/rules`*:* menampilkan peraturan grup.
+ • /rules*:* menampilkan peraturan grup.
 
 *Hanya admin:*
- • `/setrules <peraturan disini>`*:* menambahkan peraturan grup.
- • `/clearrules`*:* menghapus peraturan grup.
+ • /setrules <peraturan disini>*:* menambahkan peraturan grup.
+ • /clearrules*:* menghapus peraturan grup.
 """
 
 __mod_name__ = "Peraturan"
