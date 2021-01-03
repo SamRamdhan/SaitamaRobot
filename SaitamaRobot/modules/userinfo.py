@@ -239,7 +239,7 @@ def info(update: Update, context: CallbackContext):
     text += f"\nLink Akun: {mention_html(user.id, 'link')}"
 
     if chat.type != "private" and user_id != bot.id:
-        _stext = "\nKehadiran: <code>{}</code>"
+        _stext = "\nKedudukan: <code>{}</code>"
 
         afk_st = is_afk(user.id)
         if afk_st:
@@ -248,11 +248,11 @@ def info(update: Update, context: CallbackContext):
             status = status = bot.get_chat_member(chat.id, user.id).status
             if status:
                 if status in {"left", "kicked"}:
-                    text += _stext.format("Tidak disini")
+                    text += _stext.format("Mantan Anggota Grup")
                 elif status == "member":
-                    text += _stext.format("Detected")
+                    text += _stext.format("Warga Setempat")
                 elif status in {"administrator", "creator"}:
-                    text += _stext.format("Admin")
+                    text += _stext.format("Staff Grup")
     if user_id not in [bot.id, 777000, 1087968824]:
         userhp = hpmanager(user)
         text += f"\n\n<b>Siapa dia?</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
@@ -271,22 +271,22 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nJabatan pengguna ini adalah 'Ketua RT'."
+        text += "\n\nJabatan pengguna ini adalah <b>Ketua RT</b>."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nJulukan pengguna ini adalah 'Dewa'."
+        text += "\n\nJulukan pengguna ini adalah <b>Dewa</b>."
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\nPengguna ini adalah 'Boss Saya'."
+        text += "\n\nPengguna ini adalah <b>Preman Kampung</b>."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nJulukan pengguna ini adalah 'Orang Spesial'."
+        text += "\n\nJulukan pengguna ini adalah <b>Orang Spesial</b>."
         disaster_level_present = True
     elif user.id in TIGERS:
-        text += "\n\nJulukan pengguna ini adalah 'Warga Lama'."
+        text += "\n\nJulukan pengguna ini adalah <b>Warga Lama</b>."
         disaster_level_present = True
     elif user.id in WOLVES:
-        text += "\n\nJulukan pengguna ini adalah 'Warga Teladan'."
+        text += "\n\nJulukan pengguna ini adalah <b>Warga Teladan</b>."
         disaster_level_present = True
 
     if disaster_level_present:
