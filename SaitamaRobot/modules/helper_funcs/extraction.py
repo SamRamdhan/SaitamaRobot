@@ -51,8 +51,8 @@ def extract_user_and_text(message: Message,
         user_id = get_user_id(user)
         if not user_id:
             message.reply_text(
-                "No idea who this user is. You'll be able to interact with them if "
-                "you reply to that person's message instead, or forward one of that user's messages."
+                "Anda tidak bisa memberi tindakan dengan cara seperti iitu. "
+                "Anda hanya bisa berinteraksi dengan membalas pesan seseorang atau meneruskan salah satu pesannya."
             )
             return None, None
 
