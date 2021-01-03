@@ -22,17 +22,17 @@ def stickerid(update: Update, context: CallbackContext):
     msg = update.effective_message
     if msg.reply_to_message and msg.reply_to_message.sticker:
         update.effective_message.reply_text(
-            "Hello " +
+            "Hai " +
             f"{mention_html(msg.from_user.id, msg.from_user.first_name)}" +
-            ", The sticker id you are replying is :\n <code>" +
+            ", ID stiker yang kamu balas itu adalah:\n <code>" +
             escape(msg.reply_to_message.sticker.file_id) + "</code>",
             parse_mode=ParseMode.HTML,
         )
     else:
         update.effective_message.reply_text(
-            "Hello " +
+            "Halo " +
             f"{mention_html(msg.from_user.id, msg.from_user.first_name)}" +
-            ", Please reply to sticker message to get id sticker",
+            ", balas stiker yang ingin kamu lihat ID-nya",
             parse_mode=ParseMode.HTML,
         )
 
@@ -70,11 +70,11 @@ def getsticker(update: Update, context: CallbackContext):
         os.remove("sticker.png")
     else:
         update.effective_message.reply_text(
-            "Please reply to a sticker for me to upload its PNG.")
+            "Balas stiker untuk menampilkan file PNG.")
 
 
 @run_async
-def kang(update: Update, context: CallbackContext):
+def steal(update: Update, context: CallbackContext):
     msg = update.effective_message
     user = update.effective_user
     args = context.args
@@ -109,7 +109,7 @@ def kang(update: Update, context: CallbackContext):
         elif msg.reply_to_message.document:
             file_id = msg.reply_to_message.document.file_id
         else:
-            msg.reply_text("Yea, I can't kang that.")
+            msg.reply_text("Yeahh, saya tidak bisa menyimpan ini.")
 
         kang_file = context.bot.get_file(file_id)
         if not is_animated:
@@ -122,7 +122,7 @@ def kang(update: Update, context: CallbackContext):
         elif msg.reply_to_message.sticker and msg.reply_to_message.sticker.emoji:
             sticker_emoji = msg.reply_to_message.sticker.emoji
         else:
-            sticker_emoji = "🤔"
+            sticker_emoji = "😎"
 
         if not is_animated:
             try:
@@ -154,13 +154,13 @@ def kang(update: Update, context: CallbackContext):
                     emojis=sticker_emoji,
                 )
                 msg.reply_text(
-                    f"Sticker successfully added to [pack](t.me/addstickers/{packname})"
-                    + f"\nEmoji is: {sticker_emoji}",
+                    f"Stiker sukses ditambahkan ke [pack anda](t.me/addstickers/{packname})"
+                    + f"\nEmotnya: {sticker_emoji}",
                     parse_mode=ParseMode.MARKDOWN,
                 )
 
             except OSError as e:
-                msg.reply_text("I can only kang images m8.")
+                msg.reply_text("Saya hanya bisa menyimpan gambar.")
                 print(e)
                 return
 
@@ -185,8 +185,8 @@ def kang(update: Update, context: CallbackContext):
                         emojis=sticker_emoji,
                     )
                     msg.reply_text(
-                        f"Sticker successfully added to [pack](t.me/addstickers/{packname})"
-                        + f"\nEmoji is: {sticker_emoji}",
+                        f"Stker sukses ditambahkan ke [pack anda](t.me/addstickers/{packname})"
+                        + f"\nEmotnya: {sticker_emoji}",
                         parse_mode=ParseMode.MARKDOWN,
                     )
                 elif e.message == "Invalid sticker emojis":
@@ -196,9 +196,9 @@ def kang(update: Update, context: CallbackContext):
                         "Max packsize reached. Press F to pay respecc.")
                 elif e.message == "Internal Server Error: sticker set not found (500)":
                     msg.reply_text(
-                        "Sticker successfully added to [pack](t.me/addstickers/%s)"
+                        "Stiker sukses ditambahkan ke [pack anda](t.me/addstickers/%s)"
                         % packname + "\n"
-                        "Emoji is:" + " " + sticker_emoji,
+                        "Emotnya:" + " " + sticker_emoji,
                         parse_mode=ParseMode.MARKDOWN,
                     )
                 print(e)
@@ -248,9 +248,9 @@ def kang(update: Update, context: CallbackContext):
                     msg.reply_text("Invalid emoji(s).")
                 elif e.message == "Internal Server Error: sticker set not found (500)":
                     msg.reply_text(
-                        "Sticker successfully added to [pack](t.me/addstickers/%s)"
+                        "Stiker sukses ditambahkan ke [pack anda](t.me/addstickers/%s)"
                         % packname + "\n"
-                        "Emoji is:" + " " + sticker_emoji,
+                        "Emotnya:" + " " + sticker_emoji,
                         parse_mode=ParseMode.MARKDOWN,
                     )
                 print(e)
@@ -262,7 +262,7 @@ def kang(update: Update, context: CallbackContext):
                 png_sticker = urlemoji[1]
                 sticker_emoji = urlemoji[2]
             except IndexError:
-                sticker_emoji = "🤔"
+                sticker_emoji = "😎"
             urllib.urlretrieve(png_sticker, kangsticker)
             im = Image.open(kangsticker)
             maxsize = (512, 512)
@@ -424,16 +424,16 @@ def makepack_internal(
 
 
 __help__ = """
-• `/stickerid`*:* reply to a sticker to me to tell you its file ID.
-• `/getsticker`*:* reply to a sticker to me to upload its raw PNG file.
-• `/kang`*:* reply to a sticker to add it to your pack.
-• `/stickers`*:* Find stickers for given term on combot sticker catalogue
+• /stickerid*:* untuk melihat ID stiker yang dibalas
+• /getsticker*:* stiker akan diubah ke file PNG
+• /steal*:* memasukkan stiker ke pack anda
+• /stickers*:* mencari stiker dari katalog stiker combot
 """
 
 __mod_name__ = "Stickers"
 STICKERID_HANDLER = DisableAbleCommandHandler("stickerid", stickerid)
 GETSTICKER_HANDLER = DisableAbleCommandHandler("getsticker", getsticker)
-KANG_HANDLER = DisableAbleCommandHandler("kang", kang, admin_ok=True)
+KANG_HANDLER = DisableAbleCommandHandler("steal", steal, admin_ok=True)
 STICKERS_HANDLER = DisableAbleCommandHandler("stickers", cb_sticker)
 
 dispatcher.add_handler(STICKERS_HANDLER)
