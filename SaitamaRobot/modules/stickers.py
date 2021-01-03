@@ -228,8 +228,8 @@ def steal(update: Update, context: CallbackContext):
                     emojis=sticker_emoji,
                 )
                 msg.reply_text(
-                    f"Sticker successfully added to [pack](t.me/addstickers/{packname})"
-                    + f"\nEmoji is: {sticker_emoji}",
+                    f"Stiker sukses ditambahkan ke [pack anda](t.me/addstickers/{packname})"
+                    + f"\nEmotnya: {sticker_emoji}",
                     parse_mode=ParseMode.MARKDOWN,
                 )
             except TelegramError as e:
@@ -292,12 +292,12 @@ def steal(update: Update, context: CallbackContext):
                 emojis=sticker_emoji,
             )
             msg.reply_text(
-                f"Sticker successfully added to [pack](t.me/addstickers/{packname})"
-                + f"\nEmoji is: {sticker_emoji}",
+                f"Stiker sukses ditambahkan ke [pack anda](t.me/addstickers/{packname})"
+                + f"\nEmotnya: {sticker_emoji}",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except OSError as e:
-            msg.reply_text("I can only kang images m8.")
+            msg.reply_text("Saya hanya bisa menyimpan gambar.")
             print(e)
             return
         except TelegramError as e:
@@ -321,8 +321,8 @@ def steal(update: Update, context: CallbackContext):
                     emojis=sticker_emoji,
                 )
                 msg.reply_text(
-                    "Sticker successfully added to [pack](t.me/addstickers/%s)"
-                    % packname + "\n" + "Emoji is:" + " " + sticker_emoji,
+                    "Stiker sukses ditambahkan ke [pack anda](t.me/addstickers/%s)"
+                    % packname + "\n" + "Emotnya:" + " " + sticker_emoji,
                     parse_mode=ParseMode.MARKDOWN,
                 )
             elif e.message == "Invalid sticker emojis":
@@ -331,14 +331,14 @@ def steal(update: Update, context: CallbackContext):
                 msg.reply_text("Max packsize reached. Press F to pay respecc.")
             elif e.message == "Internal Server Error: sticker set not found (500)":
                 msg.reply_text(
-                    "Sticker successfully added to [pack](t.me/addstickers/%s)"
+                    "Stiker sukses ditambahkan ke [pack anda](t.me/addstickers/%s)"
                     % packname + "\n"
-                    "Emoji is:" + " " + sticker_emoji,
+                    "Emotnya:" + " " + sticker_emoji,
                     parse_mode=ParseMode.MARKDOWN,
                 )
             print(e)
     else:
-        packs = "Please reply to a sticker, or image to kang it!\nOh, by the way. here are your packs:\n"
+        packs = "Harap balas stiker atau gambar untuk disimpan!\nOh iya, pack anda \n"
         if packnum > 0:
             firstpackname = "a" + str(user.id) + "_by_" + context.bot.username
             for i in range(0, packnum + 1):
@@ -347,7 +347,7 @@ def steal(update: Update, context: CallbackContext):
                 else:
                     packs += f"[pack{i}](t.me/addstickers/{packname})\n"
         else:
-            packs += f"[pack](t.me/addstickers/{packname})"
+            packs += f"[ada disini](t.me/addstickers/{packname})"
         msg.reply_text(packs, parse_mode=ParseMode.MARKDOWN)
     if os.path.isfile("kangsticker.png"):
         os.remove("kangsticker.png")
@@ -366,7 +366,7 @@ def makepack_internal(
     png_sticker=None,
     tgs_sticker=None,
 ):
-    name = user.first_name
+    name = user.username
     name = name[:50]
     try:
         extra_version = ""
@@ -376,7 +376,7 @@ def makepack_internal(
             success = context.bot.create_new_sticker_set(
                 user.id,
                 packname,
-                f"{name}s kang pack" + extra_version,
+                f"koleksi {name}" + extra_version,
                 png_sticker=png_sticker,
                 emojis=emoji,
             )
@@ -384,7 +384,7 @@ def makepack_internal(
             success = context.bot.create_new_sticker_set(
                 user.id,
                 packname,
-                f"{name}s animated kang pack" + extra_version,
+                f"{name} pack animasi" + extra_version,
                 tgs_sticker=tgs_sticker,
                 emojis=emoji,
             )
@@ -393,20 +393,20 @@ def makepack_internal(
         print(e)
         if e.message == "Sticker set name is already occupied":
             msg.reply_text(
-                "Your pack can be found [here](t.me/addstickers/%s)" % packname,
+                "Pack anda bisa dilihat [disini](t.me/addstickers/%s)" % packname,
                 parse_mode=ParseMode.MARKDOWN,
             )
         elif e.message in ("Peer_id_invalid", "bot was blocked by the user"):
             msg.reply_text(
-                "Contact me in PM first.",
+                "Hubungi saya di PM terlebih dahulu.",
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton(
-                        text="Start", url=f"t.me/{context.bot.username}")
+                        text="Klik Disini", url=f"t.me/{context.bot.username}")
                 ]]),
             )
         elif e.message == "Internal Server Error: created sticker set not found (500)":
             msg.reply_text(
-                "Sticker pack successfully created. Get it [here](t.me/addstickers/%s)"
+                "Pack stiker sukses dibuat. Lihat [disini](t.me/addstickers/%s)"
                 % packname,
                 parse_mode=ParseMode.MARKDOWN,
             )
@@ -414,7 +414,7 @@ def makepack_internal(
 
     if success:
         msg.reply_text(
-            "Sticker pack successfully created. Get it [here](t.me/addstickers/%s)"
+            "Pack stiker sukses dibuat. Lihat [disini](t.me/addstickers/%s)"
             % packname,
             parse_mode=ParseMode.MARKDOWN,
         )
