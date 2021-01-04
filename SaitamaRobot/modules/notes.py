@@ -237,7 +237,7 @@ def save(update: Update, context: CallbackContext):
         chat_id, note_name, text, data_type, buttons=buttons, file=content)
 
     msg.reply_text(
-        f"Yas! Added `{note_name}`.\nGet it with /get `{note_name}`, or `#{note_name}`",
+        f"Yeah! menambahkan  `{note_name}` ke catatan.\nKetik /get `{note_name}`, atau `#{note_name}` untuk melihat catatan tersebut.",
         parse_mode=ParseMode.MARKDOWN)
 
     if msg.reply_to_message and msg.reply_to_message.from_user.is_bot:
@@ -329,7 +329,7 @@ def list_notes(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     note_list = sql.get_all_chat_notes(chat_id)
     notes = len(note_list) + 1
-    msg = "Get note by `/notenumber` or `#notename` \n\n  *ID*    *Note* \n"
+    msg = "Ambil catatan dengan mengetik `/nomor catatan` atau `#nama catatan` \n\n  *No*    *Catatan* \n"
     for note_id, note in zip(range(1, notes), note_list):
         if note_id < 10:
             note_name = f"`{note_id:2}.`  `#{(note.name.lower())}`\n"
@@ -346,7 +346,7 @@ def list_notes(update: Update, context: CallbackContext):
             update.effective_message.reply_text("No notes in this chat!")
         except BadRequest:
             update.effective_message.reply_text(
-                "No notes in this chat!", quote=False)
+                "Tidak ada catatan di grup ini!", quote=False)
 
     elif len(msg) != 0:
         update.effective_message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
@@ -495,33 +495,33 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
- • `/get <notename>`*:* get the note with this notename
- • `#<notename>`*:* same as /get
- • `/notes` or `/saved`*:* list all saved notes in this chat
- • `/number` *:* Will pull the note of that number in the list
-If you would like to retrieve the contents of a note without any formatting, use `/get <notename> noformat`. This can \
-be useful when updating a current note
+ • /get <nama catatan>*:* melihat catatan
+ • `#<nama catatan>`*:* sama seperti /get
+ • /notes or /saved*:* melihat semua daftar catatan
+ • /number *:* menampilkan catatan dengan nomor tersebut dalam daftar
+------------
+------------
 
-*Admins only:*
- • `/save <notename> <notedata>`*:* saves notedata as a note with name notename
-A button can be added to a note by using standard markdown link syntax - the link should just be prepended with a \
-`buttonurl:` section, as such: `[somelink](buttonurl:example.com)`. Check `/markdownhelp` for more info
- • `/save <notename>`*:* save the replied message as a note with name notename
- Separate diff replies by `%%%` to get random notes
- *Example:* 
- `/save notename
- Reply 1
+*Hanya Admin:*
+ • /save <nama catatan> <isi catatan>*:* menyimpan isi catatan dengan nama catatan
+Catatan bisa menggunakan tombol URL.
+ Cek /markdownhelp untuk informasi lebih lanjut.
+ • /save <nama catatan>*:* menyimpan pesan yang dibalas sebagai isi catatan dengan nama catatan
+ Pisahkan balasan dengan `%%%` untuk mendapat catatan acak
+ *Contoh:* 
+ `/save <nama catatan>
+ Balasan 1
  %%%
- Reply 2
+ Balasan 2
  %%%
- Reply 3`
- • `/clear <notename>`*:* clear note with this name
- • `/removeallnotes`*:* removes all notes from the group
- *Note:* Note names are case-insensitive, and they are automatically converted to lowercase before getting saved.
+ Balasan 3`
+ • /clear <nama catatan>*:* menghapus catatan tersebut
+ • /removeallnotes*:* menghapus semua catatan di grup
+ *Ingat:* Catatan yang sudah dihapus tidak bisa dipulihkan
 
 """
 
-__mod_name__ = "Notes"
+__mod_name__ = "Catatan"
 
 GET_HANDLER = CommandHandler("get", cmd_get)
 HASH_GET_HANDLER = MessageHandler(Filters.regex(r"^#[^\s]+"), hash_get)
