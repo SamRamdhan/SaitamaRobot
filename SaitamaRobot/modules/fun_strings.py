@@ -1,5 +1,5 @@
 RUN_STRINGS = (
-    "IKAN HIU LAGI LAPER. I LOVE YOU FOREVER."
+    "IKAN HIU LAGI LAPER. I LOVE YOU FOREVER.",
     "Cobalah bercermin maka kamu akan tahu apa yang kusebut keindahan yang haqiqi.",
     "Tahukah kamu pelangi yang kerap kupandangi? Ia kemudian malu menampakkan diri lagi ketika kuceritakan tentang keindahanmu.",
     "Melihatmu membuatku jadi visioner, bisa melihat masa depan.",
