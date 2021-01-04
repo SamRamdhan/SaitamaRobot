@@ -46,7 +46,7 @@ def send_rules(update, chat_id, from_pm=False):
         bot.send_message(
             user.id,
             "Untuk melihat peraturan grup "
-            "silahkan cek <code>#peraturan</code>")
+            "silahkan cek `#peraturan`")
     elif rules:
         update.effective_message.reply_text(
             "Silahkan klik tombol dibawah untuk melihat peraturan grup.",
@@ -57,7 +57,7 @@ def send_rules(update, chat_id, from_pm=False):
     else:
         update.effective_message.reply_text(
             "Untuk melihat peraturan grup"
-            " silahkan cek <code>#peraturan</code>")
+            " silahkan cek `#peraturan`")
 
 
 @run_async
