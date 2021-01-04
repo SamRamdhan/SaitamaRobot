@@ -1,23 +1,23 @@
 RUN_STRINGS = (
     "IKAN HIU LAGI LAPER. I LOVE YOU FOREVER."
-    "Iya",
-    "Get back here!",
-    "REEEEEEEEEEEEEEEEEE!!!!!!!",
-    "Look out for the wall!",
-    "Don't leave me alone with them!!",
-    "You've got company!",
-    "Chotto matte!",
-    "Yare yare daze",
-    "*Naruto run activated*",
-    "*Nezuko run activated*",
-    "Hey take responsibilty for what you just did!",
-    "May the odds be ever in your favour.",
-    "Run everyone, they just dropped a bomb 💣💣",
-    "And they disappeared forever, never to be seen again.",
-    "Legend has it, they're still running.",
-    "Hasta la vista, baby.",
-    "Ah, what a waste. I liked that one.",
-    "As The Doctor would say... RUN!",
+    "Cobalah bercermin maka kamu akan tahu apa yang kusebut keindahan yang haqiqi.",
+    "Tahukah kamu pelangi yang kerap kupandangi? Ia kemudian malu menampakkan diri lagi ketika kuceritakan tentang keindahanmu.",
+    "Melihatmu membuatku jadi visioner, bisa melihat masa depan.",
+    "Jika mencintaimu adalah sesuatu yang melanggar hukum, berarti aku adalah tersangka dengan hukuman paling lama.",
+    "Sajak-sajak yang tersusun indah nan rapih menjadi senjata utamaku untuk membalas keindahanmu.",
+    "Pernahkah kau berpikir jika dunia ini tak ada dirimu? Dunia menjadi gersang akan warna-warni keindahan.",
+    "Sering aku berpikir apa yang lebih indah dan nyaman selain menatap rembulan malam hari, kemudian aku bertemu denganmu. Ternyata ada.",
+    "Bahkan jika semua waktuku ku habiskan untuk menulis semua kekagumanku padamu, tulisan itu pasti belum selesai ketika usiaku sudah usai.",
+    "Kau.... Kagumku selain pada Tuhan.",
+    "Kalau tulisan ini berwujud, mampukah ia menandingi parasmu?",
+    "Kilau bintang terlihat redup ketika aku melihatmu.",
+    "Ini bukanlah rayuan, ini adalah sepatah doa yang selalu aku panjatkan. Aku mencintaimu.",
+    "Lihatlah betapa menawannya senyum yang selalu kupandangi itu. Hei, kamu jangan murung, aku ingin melihat senyum itu.",
+    "Sayang sekali aku tidak berani mengungkapkan bahwa Aku sayang sekali padamu.",
+    "Sekarang aku mengerti mengapa kita harus merindu, sebabnya Kamu.",
+    "Tergila-gila padamu adalah hal yang paling waras yang pernah kurasakan.",
+    "Diam adalah kekuatan terbesarku dalam mencintaimu.",
+    "Asal kau tahu, pelukmu adalah sesuatu yang kuperjuangkan untuk kumiliki utuh.",
 )
 
 GIFS = [
@@ -275,10 +275,24 @@ EIGHTBALL = [
     "Tenang saja, kau pasti aman dari serangan virus ini. Karena virus ini menyerang organ tubuh yang kau tidak punya, otak.",
     "Kau sangat serakah, bahkan soal kebodohan kau tak mau berbagi."
     "Apa yang lebih buruk dari sifat mu? Betul, tidak ada.",
-    "Jangan baca tulisan ini! Kenapa kau malah melakukannya?"
+    "Jangan baca tulisan ini! Kenapa kau malah melakukannya?",
+    "Maaf kalo aku mengatakan kamu bodoh, aku kira kamu sudah tahu.",
+    "Aku tidak bermaksud bilang bahwa kamu bodoh, hanya saja kamu selalu kesusahan saat berpikir.",
+    "Di mana ada kebodohan, di situ ada kamu.",
+    "Jika kamu coba menahan napas selama 2 jam, maka kamu pasti bisa untuk menahannya selamanya.",
+    "Orang gila terlihat normal jika berada di dekatmu.",
+    "TETAP PUTUS ASA DAN JANGAN SEMANGAT.",
+    "Tarik napas dalam-dalam kemudian tahan hingga besok.",
+    "Kalau ada orang yang mau bunuh diri, mereka tinggal naik ke ego mu yang tinggi kemudian melompat ke IQ-mu.",
+    "Otakmu pasti sangat mahal ketika dijual, sebab itu belum pernah terpakai.",
+    "Cobalah menari di tengah jalan tol ketika siang hari.",
+    "Maaf kurasa kamu kehilangan sesuatu, yaitu akal.",
+    "Hanya orang bodoh yang membaca tulisan ini!.",
+    "COBALAH BACA TULISAN INI TANPA NGEGAS!!",
+    "BODOH!! Katamu pada diri sendiri."
 ]
 
-DECIDE = ("Bacot.", "be a ce o te.", "hilih bicit.")
+DECIDE = ("Bacot.", "be a ce o te.", "hilih bicit.", "Dih bacot.", "Iya deh bacot.")
 
 TABLE = ("(╯°□°）╯彡 ┻━┻", "I ran out of tables, will order more.",
          "Go do some work instead of flippin tables.")
