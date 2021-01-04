@@ -217,7 +217,7 @@ def slash_get(update: Update, context: CallbackContext):
         note_name = str(noteid).strip(">").split()[1]
         get(update, context, note_name, show_none=False)
     except IndexError:
-        update.effective_message.reply_text("Wrong Note ID 😾")
+        update.effective_message.reply_text("Salah nomor catatan 😾")
 
 
 @run_async
@@ -343,7 +343,7 @@ def list_notes(update: Update, context: CallbackContext):
 
     if not note_list:
         try:
-            update.effective_message.reply_text("No notes in this chat!")
+            update.effective_message.reply_text("Tidak ada catatan di grup ini!")
         except BadRequest:
             update.effective_message.reply_text(
                 "Tidak ada catatan di grup ini!", quote=False)
