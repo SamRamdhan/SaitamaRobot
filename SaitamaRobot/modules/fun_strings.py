@@ -3,7 +3,7 @@ RUN_STRINGS = (
     "Cobalah bercermin maka kamu akan tahu apa yang kusebut keindahan yang haqiqi.",
     "Tahukah kamu pelangi yang kerap kupandangi? Ia kemudian malu menampakkan diri lagi ketika kuceritakan tentang keindahanmu.",
     "Melihatmu membuatku jadi visioner, bisa melihat masa depan.",
-    "Jika mencintaimu adalah sesuatu yang melanggar hukum, berarti aku adalah tersangka dengan hukuman paling lama.",
+    "Jika mencintaimu adalah sesuatu yang melanggar hukum, berarti aku adalah terpidana dengan hukuman paling lama.",
     "Sajak-sajak yang tersusun indah nan rapih menjadi senjata utamaku untuk membalas keindahanmu.",
     "Pernahkah kau berpikir jika dunia ini tak ada dirimu? Dunia menjadi gersang akan warna-warni keindahan.",
     "Sering aku berpikir apa yang lebih indah dan nyaman selain menatap rembulan malam hari, kemudian aku bertemu denganmu. Ternyata ada.",
@@ -287,7 +287,7 @@ EIGHTBALL = [
     "Otakmu pasti sangat mahal ketika dijual, sebab itu belum pernah terpakai.",
     "Cobalah menari di tengah jalan tol ketika siang hari.",
     "Maaf kurasa kamu kehilangan sesuatu, yaitu akal.",
-    "Hanya orang bodoh yang membaca tulisan ini!.",
+    "Hanya orang bodoh yang membaca tulisan ini!",
     "COBALAH BACA TULISAN INI TANPA NGEGAS!!",
     "BODOH!! Katamu pada diri sendiri."
 ]
