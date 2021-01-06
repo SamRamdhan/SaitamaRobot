@@ -236,7 +236,7 @@ def info(update: Update, context: CallbackContext):
     if user.username:
         text += f"\nUsername: @{html.escape(user.username)}"
 
-    text += f"\nLink Akun: {mention_html(user.id, 'link')}"
+    text += f"\nLink Akun: {mention_html(user.id, 'disini')}"
 
     if chat.type != "private" and user_id != bot.id:
         _stext = "\nKedudukan: <code>{}</code>"
