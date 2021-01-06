@@ -292,7 +292,7 @@ EIGHTBALL = [
     "BODOH!! Katamu pada diri sendiri."
 ]
 
-DECIDE = ("Bacot.", "be a ce o te.", "hilih bicit.", "Dih bacot.", "Iya deh bacot.")
+DECIDE = ("Bacot.", "be a ce o te.", "hilih bicit.", "Dih bacot.", "Iya deh bacot.", "bct.")
 
-TABLE = ("(╯°□°）╯彡 ┻━┻", "I ran out of tables, will order more.",
-         "Go do some work instead of flippin tables.")
+TABLE = ("Kabur 🏃🏻‍♂️🏃🏻‍♂🏃🏻‍♂💨💨💨 ", "Lari *bersembunyi pada rumput yang bergoyang*.",
+         "3 2 1 go!!! 🏃🏻‍♂️🏃🏻‍♂️🏃🏻‍♂️💨💨💨.")
