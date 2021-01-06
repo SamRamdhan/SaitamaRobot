@@ -74,7 +74,7 @@ def remove_chat(update: Update, context: CallbackContext):
 
 def check_message(context: CallbackContext, message):
     reply_msg = message.reply_to_message
-    if message.text.lower() == "oi canzu":
+    if message.text.lower() == "canzu":
         return True
     if reply_msg:
         if reply_msg.from_user.id == context.bot.get_me().id:
@@ -140,8 +140,8 @@ Chatbot menggunakan API CoffeeHouse dan memungkinkan canzu untuk mengirim pesan 
 
 *Perintah:* 
 *Hanya Admin:*
- • `/addchat`*:* mengaktifkan chatbot di grup.
- • `/rmchat`*:* menonaktifkan chatbot di grup.
+ • /addchat*:* mengaktifkan chatbot di grup.
+ • /rmchat*:* menonaktifkan chatbot di grup.
 
 Silahkan gabung ke grup @{SUPPORT_CHAT}
 *Didukung oleh CoffeeHouse* (https://coffeehouse.intellivoid.net/) dari @Intellivoid
