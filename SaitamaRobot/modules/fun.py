@@ -199,7 +199,7 @@ def hina(update: Update, context: CallbackContext):
 
 
 @run_async
-def table(update: Update, context: CallbackContext):
+def lari(update: Update, context: CallbackContext):
     reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
     reply_text(random.choice(fun_strings.TABLE))
 
@@ -246,7 +246,7 @@ __help__ = """
  • /gombal*:* membalas pesan dengan gombalan
  • /slap*:* geplak pengguna
  • /shrug*:* mana saya tau
- • /table*:* flip/unflip :v
+ • /lari*:* kabur dari kenyataan
  • /rlg*:* random ekspresi
  • /toss*:* lempar koin
  • /bluetext*:* cek diri anda sendiri:V
@@ -270,7 +270,7 @@ BLUETEXT_HANDLER = DisableAbleCommandHandler("bluetext", bluetext)
 RLG_HANDLER = DisableAbleCommandHandler("rlg", rlg)
 DECIDE_HANDLER = DisableAbleCommandHandler("bacot", bacot)
 EIGHTBALL_HANDLER = DisableAbleCommandHandler("hina", hina)
-TABLE_HANDLER = DisableAbleCommandHandler("table", table)
+TABLE_HANDLER = DisableAbleCommandHandler("lari", lari)
 SHOUT_HANDLER = DisableAbleCommandHandler("shout", shout)
 WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify)
 
