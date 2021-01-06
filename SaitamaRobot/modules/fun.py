@@ -44,7 +44,7 @@ def slap(update: Update, context: CallbackContext):
 
     reply_text = message.reply_to_message.reply_text if message.reply_to_message else message.reply_text
 
-    curr_user = "{}".format(mention_markdown(message.from_user.id, message.from_user.first_name))
+    curr_user = "@" + html.escape(mention_markdown(message.from_user.id, message.from_user.first_name))
     user_id = extract_user(message, args)
 
     if user_id == bot.id:
@@ -169,7 +169,7 @@ def bluetext(update: Update, context: CallbackContext):
     msg = update.effective_message
     reply_text = msg.reply_to_message.reply_text if msg.reply_to_message else msg.reply_text
     reply_text(
-        "/BLUE /TEXT\n/MUST /CLICK\n/I /AM /A /STUPID /ANIMAL /THAT /IS /ATTRACTED /TO /COLORS"
+        "/TEKS /BIRU\n/HARUS /KLIK\n/SAYA /BODOH /HEWAN /ITU /ADALAH /PENYUKA /WARNA"
     )
 
 
@@ -243,20 +243,20 @@ def weebify(update: Update, context: CallbackContext):
 
 
 __help__ = """
- • `/gombal`*:* membalas pesan dengan gombalan
- • `/slap`*:* geplak pengguna
- • `/shrug`*:* mana saya tau
- • `/table`*:* flip/unflip :v
- • `/rlg`*:* random ekspresi
- • `/toss`*:* lempar koin
- • `/bluetext`*:* cek diri anda sendiri:V
- • `/roll`*:* menampilkan angka dadu
- • `/hina`*:* memberikan hinaan
- • `/shout <kata>`*:* tulis apapun yang ingin anda teriakkan
- • `/weebify <text>`*:* mengembalikan text weebify
- • `/sanitize`*:* menyemprot cairan suci
- • `/mesum`*:* xixixixixi
- • `/bacot`*:* halah bacot kau
+ • /gombal*:* membalas pesan dengan gombalan
+ • /slap*:* geplak pengguna
+ • /shrug*:* mana saya tau
+ • /table*:* flip/unflip :v
+ • /rlg*:* random ekspresi
+ • /toss*:* lempar koin
+ • /bluetext*:* cek diri anda sendiri:V
+ • /roll*:* menampilkan angka dadu
+ • /hina*:* memberikan hinaan
+ • /shout <kata>*:* tulis apapun yang ingin anda teriakkan
+ • /weebify <teks>*:* mengembalikan text weebify
+ • /sanitize*:* menyemprot cairan suci
+ • /mesum*:* xixixixixi
+ • /bacot*:* halah bacot kau
 """
 
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize)
@@ -289,7 +289,7 @@ dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(EIGHTBALL_HANDLER)
 dispatcher.add_handler(TABLE_HANDLER)
 
-__mod_name__ = "Seru-Seruan"
+__mod_name__ = "🔥 Seru-Seruan 🔥"
 __command_list__ = [
     "runs", "slap", "roll", "toss", "shrug", "bluetext", "rlg", "decide",
     "table", "pat", "sanitize", "shout", "weebify", "8ball"
