@@ -36,7 +36,7 @@ def afk(update: Update, context: CallbackContext):
     sql.set_afk(update.effective_user.id, reason)
     fname = update.effective_user.first_name
     try:
-        update.effective_message.reply_text("❌ {} Sekarang Afk!{}".format(
+        update.effective_message.reply_text("✋🏼 {} Sekarang Afk!{}".format(
             fname, notice))
     except BadRequest:
         pass
@@ -57,9 +57,9 @@ def no_longer_afk(update: Update, context: CallbackContext):
         firstname = update.effective_user.first_name
         try:
             options = [
-                '✔️ {} sekarang disini!', '✔️ {} sudah tidak AFK!', '✔️ {} sekarang telah muncul!',
-                '✔️ {} telah aktif!', '✔️ {} kembali aktif!', '✔️ {} akhirnya kembali!',
-                'Hai {}, Welkambek 🥳', 'Ada yang rindu {}?\ndia sudah tidak AFK!'
+                '🙋🏻‍♂️ {} sekarang disini!', '🙋🏻‍♂️ {} sudah tidak AFK!', '🙋🏻‍♂️ {} sekarang telah muncul!',
+                '✅ {} telah aktif!', '✅ {} kembali aktif!', '🙋🏻‍♂️ {} akhirnya kembali!',
+                'Hai {}, Welkambek 🥳', 'Ada yang rindu {}?\nDia sudah tidak AFK!'
             ]
             chosen_option = random.choice(options)
             update.effective_message.reply_text(chosen_option.format(firstname))
@@ -124,12 +124,12 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if not user.reason:
             if int(userc_id) == int(user_id):
                 return
-            res = "❌ {} saat ini sedang AFK".format(fst_name)
+            res = "🙅🏻‍♂️ {} saat ini sedang AFK".format(fst_name)
             update.effective_message.reply_text(res)
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "❌ {} saat ini AFK.\n\n📝 Alasannya karena sedang: <code>{}</code>".format(
+            res = "🙅🏻‍♂️ {} saat ini AFK.\n\n🗣️ Alasannya karena sedang: <code>{}</code>".format(
                 html.escape(fst_name), html.escape(user.reason))
             update.effective_message.reply_text(res, parse_mode="html")
 
