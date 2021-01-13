@@ -130,7 +130,7 @@ SLAP_TEMPLATES = (
     "{user2} ditabrak oleh {user1} menggunakan mobil damkar.",
     "{user1} mengutuk {user2} menjadi obat nyamuk bakar.",
     "{user1} berlari mengejar {user2} sambil berteriak MALING, MALING!!",
-    "{user2} mendapat dihukum *HARUS TIDUR MEMAKAI SELIMUT TAPI KAKINYA DILUAR*",
+    "{user2} mendapat hukuman *HARUS TIDUR MEMAKAI SELIMUT TAPI KAKINYA DILUAR*",
     "{user1} menarik semua bulu hidung {user2}.",
     "{user1} mengikat {user2} menggunakan kawat duri.",
     "Lihat siapa itu yang dikeroyok massa? Oh ternyata {user2}!",
