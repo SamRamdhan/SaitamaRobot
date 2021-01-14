@@ -29,14 +29,14 @@ def afk(update: Update, context: CallbackContext):
         reason = args[1]
         if len(reason) > 100:
             reason = reason[:100]
-            notice = "\nAlasan AFK hanya boleh sampai 100 huruf."
+            notice = "\n<b>Alasan AFK hanya boleh sampai 100 huruf.</b>"
     else:
         reason = ""
 
     sql.set_afk(update.effective_user.id, reason)
     fname = update.effective_user.first_name
     try:
-        update.effective_message.reply_text("✋🏼 {} Sekarang Afk!{}".format(
+        update.effective_message.reply_text("✋🏼 {} <i>Sekarang Afk!</i>{}".format(
             fname, notice))
     except BadRequest:
         pass
@@ -57,9 +57,9 @@ def no_longer_afk(update: Update, context: CallbackContext):
         firstname = update.effective_user.first_name
         try:
             options = [
-                '🙋🏻‍♂️ {} sekarang disini!', '🙋🏻‍♂️ {} sudah tidak AFK!', '🙋🏻‍♂️ {} sekarang telah muncul!',
-                '✅ {} telah aktif!', '✅ {} kembali aktif!', '🙋🏻‍♂️ {} akhirnya kembali!',
-                'Hai {}, Welkambek 🥳', 'Ada yang rindu {}?\nDia sudah tidak AFK!'
+                '🙋🏻‍♂️ {} <i>sekarang disini!</i>', '🙋🏻‍♂️ {} <i>sudah tidak AFK!</i>', '🙋🏻‍♂️ {} <i>sekarang telah muncul!</i>',
+                '✅ {} <i>telah aktif!</i>', '✅ {} <i>kembali aktif!</i>', '🙋🏻‍♂️ {} <i>akhirnya kembali!</i>',
+                '<i>Hai</i> {}, <i>Welkambek</i> 🥳', '<i>Ada yang rindu</i> {}?\n<i>Dia sudah ada disini!</i>'
             ]
             chosen_option = random.choice(options)
             update.effective_message.reply_text(chosen_option.format(firstname))
@@ -105,7 +105,7 @@ def reply_afk(update: Update, context: CallbackContext):
                     print("Error: Could not fetch userid {} for AFK module"
                           .format(user_id))
                     return
-                fst_name = chat.username
+                fst_name = chat.first_name
 
             else:
                 return
@@ -114,7 +114,7 @@ def reply_afk(update: Update, context: CallbackContext):
 
     elif message.reply_to_message:
         user_id = message.reply_to_message.from_user.id
-        fst_name = message.reply_to_message.from_user.username
+        fst_name = message.reply_to_message.from_user.first_name
         check_afk(update, context, user_id, fst_name, userc_id)
 
 
@@ -124,12 +124,12 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if not user.reason:
             if int(userc_id) == int(user_id):
                 return
-            res = "🙅🏻‍♂️ @{} saat ini sedang AFK".format(fst_name)
+            res = "🙅🏻‍♂️ {} <i>saat ini sedang AFK</i>".format(fst_name)
             update.effective_message.reply_text(res)
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "🙅🏻‍♂️ @{} <i>saat ini AFK.</i>\n\n🗣️ <i>Alasannya karena sedang:</i> <code>{}</code>".format(
+            res = "🙅🏻‍♂️ {} <i>saat ini AFK.</i>\n\n🗣️ <i>Alasannya karena sedang:</i> <code>{}</code>".format(
                 html.escape(fst_name), html.escape(user.reason))
             update.effective_message.reply_text(res, parse_mode="html")
 
