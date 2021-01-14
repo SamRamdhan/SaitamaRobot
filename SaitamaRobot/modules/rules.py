@@ -52,7 +52,7 @@ def send_rules(update, chat_id, from_pm=False):
             "Silahkan klik tombol dibawah untuk melihat peraturan grup.",
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton(
-                    text="Klik Disini", url=f"t.me/{bot.username}?start={chat_id}")
+                    text="Klik Disini", url=f"https://t.me/KerabatOnline_Ch/153/")
             ]]))
     else:
         update.effective_message.reply_text(
