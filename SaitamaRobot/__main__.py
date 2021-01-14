@@ -53,7 +53,7 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """
 Halo {}, nama saya {}! 
 Saya adalah official bot manajemen grup [Kerabat Online](https://t.me/KerabatOnline) dan afiliasi.
-Gabung bersama kami untuk bermain berbagai macam game di telegram.
+[Pengguna ini](https://t.me/SamRamadhan) adalah boss saya.
 
 Ketik /help untuk melihat perintah yang tersedia.
 """
@@ -187,7 +187,7 @@ def start(update: Update, context: CallbackContext):
                         match.group(1), update.effective_user.id, True)
 
             elif args[0][1:].isdigit() and "rules" in IMPORTED:
-                IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
+                IMPORTED["rules"].send_rules(update, args[0], from_pm=False)
 
         else:
             first_name = update.effective_user.first_name
@@ -201,7 +201,7 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="❎ Tidak dapat ditambahkan ❎",
+                            text="❌ Tidak dapat ditambahkan ❌",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                     ],
@@ -543,7 +543,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Knock Knock!")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "🥳")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!")
