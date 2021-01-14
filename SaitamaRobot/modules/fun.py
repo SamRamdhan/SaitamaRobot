@@ -16,7 +16,8 @@ GIF_ID = 'CgACAgQAAx0CSVUvGgAC7KpfWxMrgGyQs-GUUJgt-TSO8cOIDgACaAgAAlZD0VHT3Zynpr
 
 @run_async
 def gombal(update: Update, context: CallbackContext):
-    update.effective_message.reply_text(random.choice(fun_strings.RUN_STRINGS))
+    reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
+    reply_text(random.choice(fun_strings.RUN_STRINGS))
 
 
 @run_async
