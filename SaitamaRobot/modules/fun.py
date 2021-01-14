@@ -10,7 +10,7 @@ from SaitamaRobot.modules.helper_funcs.extraction import extract_user
 from telegram import ChatPermissions, ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, run_async
-from telegram.utils.helpers import escape_markdown, mention_html
+from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 
 GIF_ID = 'CgACAgQAAx0CSVUvGgAC7KpfWxMrgGyQs-GUUJgt-TSO8cOIDgACaAgAAlZD0VHT3Zynpr5nGxsE'
 
@@ -46,7 +46,7 @@ def slap(update: Update, context: CallbackContext):
 
     reply_text = message.reply_to_message.reply_text if message.reply_to_message else message.reply_text
 
-    curr_user = "{}".format(mention_html(message.from_user.id, message.from_user.first_name))
+    curr_user = "{}".format(mention_markdown(message.from_user.id, message.from_user.first_name))
     user_id = extract_user(message, args)
 
     if user_id == bot.id:
@@ -73,7 +73,7 @@ def slap(update: Update, context: CallbackContext):
 
         slapped_user = bot.get_chat(user_id)
         user1 = curr_user
-        user2 = "{}".format(mention_html(slapped_user.id, slapped_user.first_name))
+        user2 = "{}".format(mention_markdown(slapped_user.id, slapped_user.first_name))
 
     else:
         user1 = "@" + bot.username
