@@ -105,7 +105,7 @@ def reply_afk(update: Update, context: CallbackContext):
                     print("Error: Could not fetch userid {} for AFK module"
                           .format(user_id))
                     return
-                fst_name = chat.first_name
+                fst_name = chat.username
 
             else:
                 return
@@ -114,7 +114,7 @@ def reply_afk(update: Update, context: CallbackContext):
 
     elif message.reply_to_message:
         user_id = message.reply_to_message.from_user.id
-        fst_name = message.reply_to_message.from_user.first_name
+        fst_name = message.reply_to_message.from_user.username
         check_afk(update, context, user_id, fst_name, userc_id)
 
 
@@ -124,12 +124,12 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if not user.reason:
             if int(userc_id) == int(user_id):
                 return
-            res = "🙅🏻‍♂️ {} saat ini sedang AFK".format(fst_name)
+            res = "🙅🏻‍♂️ @{} saat ini sedang AFK".format(fst_name)
             update.effective_message.reply_text(res)
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "🙅🏻‍♂️ {} saat ini AFK.\n\n🗣️ Alasannya karena sedang: <code>{}</code>".format(
+            res = "🙅🏻‍♂️ @{} <i>saat ini AFK.</i>\n\n🗣️ <i>Alasannya karena sedang:</i> <code>{}</code>".format(
                 html.escape(fst_name), html.escape(user.reason))
             update.effective_message.reply_text(res, parse_mode="html")
 
