@@ -202,8 +202,8 @@ def hina(update: Update, context: CallbackContext):
 
 @run_async
 def lari(update: Update, context: CallbackContext):
-    reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
-    reply_text(random.choice(fun_strings.TABLE))
+    update.effective_message.reply_text(random.choice(fun_strings.TABLE))
+    
 
 
 normiefont = [
