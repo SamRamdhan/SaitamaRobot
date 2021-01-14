@@ -29,14 +29,14 @@ def afk(update: Update, context: CallbackContext):
         reason = args[1]
         if len(reason) > 100:
             reason = reason[:100]
-            notice = "\n<b>Alasan AFK hanya boleh sampai 100 huruf.</b>"
+            notice = "\nAlasan AFK dipotong karena hanya boleh sampai 100 huruf."
     else:
         reason = ""
 
     sql.set_afk(update.effective_user.id, reason)
     fname = update.effective_user.first_name
     try:
-        update.effective_message.reply_text("✋🏼 {} <i>Sekarang Afk!</i>{}".format(
+        update.effective_message.reply_text("✋🏼 {} Sekarang Afk!{}".format(
             fname, notice))
     except BadRequest:
         pass
@@ -57,9 +57,9 @@ def no_longer_afk(update: Update, context: CallbackContext):
         firstname = update.effective_user.first_name
         try:
             options = [
-                '🙋🏻‍♂️ {} <i>sekarang disini!</i>', '🙋🏻‍♂️ {} <i>sudah tidak AFK!</i>', '🙋🏻‍♂️ {} <i>sekarang telah muncul!</i>',
-                '✅ {} <i>telah aktif!</i>', '✅ {} <i>kembali aktif!</i>', '🙋🏻‍♂️ {} <i>akhirnya kembali!</i>',
-                '<i>Hai</i> {}, <i>Welkambek</i> 🥳', '<i>Ada yang rindu</i> {}?\n<i>Dia sudah ada disini!</i>'
+                '🙋🏻‍♂️ {} sekarang disini!', '🙋🏻‍♂️ {} sudah tidak AFK!', '🙋🏻‍♂️ {} sekarang telah muncul!',
+                '✅ {} <i>telah aktif!', '✅ {} kembali aktif!', '🙋🏻‍♂️ {} akhirnya kembali!',
+                'Siapa yang mengirim pesan barusan? Oh ternyata si {}., ', 'Ada yang rindu {}?\nDia sudah ada disini!'
             ]
             chosen_option = random.choice(options)
             update.effective_message.reply_text(chosen_option.format(firstname))
@@ -124,12 +124,12 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if not user.reason:
             if int(userc_id) == int(user_id):
                 return
-            res = "🙅🏻‍♂️ {} <i>saat ini sedang AFK</i>".format(fst_name)
+            res = "🙅🏻‍♂️ {} <i>saat ini sedang AFK</i>\n\n🤔 <b>Dia tidak memberi tahu alasannya AFK.</b>".format(fst_name)
             update.effective_message.reply_text(res)
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "🙅🏻‍♂️ {} <i>saat ini AFK.</i>\n\n🗣️ <i>Alasannya karena sedang:</i> <code>{}</code>".format(
+            res = "🙅🏻‍♂️ {} <i>saat ini AFK.</i>\n\n🗣️ <i>Alasannya karena sedang:</i> <b>{}</b>".format(
                 html.escape(fst_name), html.escape(user.reason))
             update.effective_message.reply_text(res, parse_mode="html")
 
