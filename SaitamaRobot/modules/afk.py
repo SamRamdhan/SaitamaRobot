@@ -125,7 +125,7 @@ def check_afk(update, context, user_id, fst_name, userc_id):
             if int(userc_id) == int(user_id):
                 return
             res = "🙅🏻‍♂️ {} <i>saat ini sedang AFK</i>\n\n🤔 <b>Dia tidak memberi tahu alasannya AFK.</b>".format(fst_name)
-            update.effective_message.reply_text(res)
+            update.effective_message.reply_text(res, parse_mode="html")
         else:
             if int(userc_id) == int(user_id):
                 return
