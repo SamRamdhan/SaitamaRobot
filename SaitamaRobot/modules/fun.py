@@ -90,7 +90,7 @@ def slap(update: Update, context: CallbackContext):
     reply = temp.format(
         user1=user1, user2=user2, item=item, hits=hit, throws=throw)
 
-    reply_text(reply, parse_mode=ParseMode.HTML)
+    update.message.reply_text(reply, parse_mode=ParseMode.HTML)
 
 
 @run_async
