@@ -76,7 +76,7 @@ def slap(update: Update, context: CallbackContext):
         user2 = "{}".format(mention_html(slapped_user.id, slapped_user.first_name))
 
     else:
-        user1 = "@" + bot.username
+        user1 = "{}".format(mention_html(context.bot.id, context.bot.first_name))
         user2 = curr_user
 
     temp = random.choice(fun_strings.SLAP_TEMPLATES)
@@ -101,29 +101,29 @@ def mesum(update: Update, context: CallbackContext):
 
     reply_to = message.reply_to_message if message.reply_to_message else message
 
-    curr_user = "@" + html.escape(message.from_user.username)
+    curr_user = "{}".format(mention_html(message.from_user.id, message.from_user.first_name))
     user_id = extract_user(message, args)
 
     if user_id:
         patted_user = bot.get_chat(user_id)
         user1 = curr_user
-        user2 = "@" + html.escape(patted_user.username)
+        user2 = "{}".format(mention_html(patted_user.id, patted_user.first_name))
 
     else:
-        user1 = "@" + bot.username
+        user1 = "{}".format(mention_html(context.bot.id, context.bot.first_name))
         user2 = curr_user
 
     pat_type = random.choice(("Text", "Gif", "Sticker"))
     if pat_type == "Gif":
         try:
-            temp = random.choice(fun_strings.PAT_GIFS)
+            temp = random.choice(fun_strings.PAT_TEMPLATES)
             reply_to.reply_animation(temp)
         except BadRequest:
             pat_type = "Text"
 
     if pat_type == "Sticker":
         try:
-            temp = random.choice(fun_strings.PAT_STICKERS)
+            temp = random.choice(fun_strings.PAT_TEMPLATES)
             reply_to.reply_sticker(temp)
         except BadRequest:
             pat_type = "Text"
