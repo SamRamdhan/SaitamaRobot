@@ -30,7 +30,7 @@ SLAP_SAITAMA_TEMPLATES = (
     "Anda siapa?? Berani-beraninya slap saya?!",
     "Berhenti slap saya 😠😠😠",
     [
-        "Saya membisukan {user1} untuk beberapa saat.",  # normal reply
+        "Saya membisukan anda untuk beberapa saat.",  # normal reply
         "Berutung anda adalah admin, jadi saya tidak bisa membisukan anda 😤😤😤",  # reply to admin
         "tmute",  # command
         "Diam Anda!",
@@ -294,5 +294,5 @@ EIGHTBALL = [
 
 DECIDE = ("Bacot.", "be a ce o te.", "hilih bicit.", "Dih bacot.", "Iya deh bacot.", "bct.")
 
-TABLE = ("Kabur 🏃🏻‍♂️🏃🏻‍♂🏃🏻‍♂💨💨💨 ", "Lari *bersembunyi pada rumput yang bergoyang*.",
+TABLE = ("Hei {user1} ayo kabur 🏃🏻‍♂️🏃🏻‍♂🏃🏻‍♂💨💨💨 ", "Lari *bersembunyi pada rumput yang bergoyang*.",
          "3 2 1 go!!! 🏃🏻‍♂️🏃🏻‍♂️🏃🏻‍♂️💨💨💨.")
