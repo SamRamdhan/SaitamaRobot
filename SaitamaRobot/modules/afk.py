@@ -57,8 +57,8 @@ def no_longer_afk(update: Update, context: CallbackContext):
         firstname = update.effective_user.first_name
         try:
             options = [
-                '🙋🏻‍♂️ {} sekarang disini!', '🙋🏻‍♂️ {} sudah tidak AFK!', '🙋🏻‍♂️ {} sekarang telah muncul!',
-                '✅ {} <i>telah aktif!', '✅ {} kembali aktif!', '🙋🏻‍♂️ {} akhirnya kembali!',
+                '🙋🏻‍♂️ {} sekarang disini!', '🙋🏻‍♂️ {} sudah tidak AFK!', '🙋🏻‍♂️ {} sekarang telah aktif!',
+                '✅ {} telah aktif!', '✅ {} kembali aktif!', '🙋🏻‍♂️ {} akhirnya kembali!',
                 'Siapa yang mengirim pesan barusan? Oh ternyata si {}., ', 'Ada yang rindu {}?\nDia sudah ada disini!'
             ]
             chosen_option = random.choice(options)
@@ -124,12 +124,12 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if not user.reason:
             if int(userc_id) == int(user_id):
                 return
-            res = "🙅🏻‍♂️ {} <i>saat ini sedang AFK</i>\n\n🤔 <b>Dia tidak memberi tahu alasannya AFK.</b>".format(fst_name)
+            res = "🙅🏻‍♂️ {} <i>sedang AFK</i>\n\n🤔 <b>Mungkin dia sedang sibuk.</b>".format(fst_name)
             update.effective_message.reply_text(res, parse_mode="html")
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "🙅🏻‍♂️ {} <i>saat ini AFK.</i>\n\n🗣️ <i>Alasannya karena sedang:</i> <b>{}</b>".format(
+            res = "🙅🏻‍♂️ {} <i>sedang AFK.</i>\n\n🗣️ <i>Alasannya karena:</i> <b>{}</b>".format(
                 html.escape(fst_name), html.escape(user.reason))
             update.effective_message.reply_text(res, parse_mode="html")
 
@@ -137,7 +137,7 @@ def check_afk(update, context, user_id, fst_name, userc_id):
 __help__ = """
  • `/afk <alasan>`*:* menandai anda sedang AFK (away from keyboard).
  • `brb <alasan>`*:* sama seperti /afk - tapi ini bukan command.
-Ketika anda menandai AFK, setiap mentions akan dibales dengan kalimat bahwa anda sedang AFK!
+Ketika anda menandai AFK, setiap mentions akan dibalas dengan kalimat bahwa anda sedang AFK!
 """
 
 AFK_HANDLER = DisableAbleCommandHandler("afk", afk)
