@@ -26,11 +26,11 @@ police_siren = [
 @user_admin
 @run_async
 def police(bot: Bot, update: Update):
-    msg = update.effective_message.reply_text('Polisi akan datang!') 
+    message = update.effective_message.reply_text('Polisi akan datang!') 
     for x in range(EDIT_TIMES):
-        msg.edit_text(police_siren[x%2])
+        message.edit_text(police_siren[x%2])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text('Polisi telah sampai!')
+    message.edit_text('Polisi telah sampai!')
 
 
 __help__ = """
