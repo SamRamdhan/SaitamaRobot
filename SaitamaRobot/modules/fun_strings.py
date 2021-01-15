@@ -30,7 +30,7 @@ SLAP_SAITAMA_TEMPLATES = (
     "Anda siapa?? Berani-beraninya slap saya?!",
     "Berhenti slap saya 😠😠😠",
     [
-        "Saya membisukan anda untuk beberapa saat.",  # normal reply
+        "Saya membisukan {user1} untuk beberapa saat.",  # normal reply
         "Berutung anda adalah admin, jadi saya tidak bisa membisukan anda 😤😤😤",  # reply to admin
         "tmute",  # command
         "Diam Anda!",
