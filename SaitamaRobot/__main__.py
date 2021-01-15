@@ -53,7 +53,7 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """
 Halo {}, nama saya {}! 
 Saya adalah official bot manajemen grup [Kerabat Online](https://t.me/KerabatOnline) dan afiliasi.
-[Pengguna ini](https://t.me/SamRamadhan) adalah boss saya.
+-----------------------------------
 
 Ketik /help untuk melihat perintah yang tersedia.
 """
