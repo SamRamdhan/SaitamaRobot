@@ -28,9 +28,9 @@ GIFS = [
 
 SLAP_SAITAMA_TEMPLATES = (
     "Anda siapa?? Berani-beraninya slap saya?!",
-    "Berhenti slap saya 😠😠😠",
+    "Berhenti slap saya {curr_user} 😠😠😠",
     [
-        "Saya membisukan untuk beberapa saat.",  # normal reply
+        "Saya membisukan {curr_user} untuk beberapa saat.",  # normal reply
         "Berutung anda adalah admin, jadi saya tidak bisa membisukan anda 😤😤😤",  # reply to admin
         "tmute",  # command
         "Diam Anda!",
