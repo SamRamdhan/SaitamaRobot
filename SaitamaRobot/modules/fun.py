@@ -52,7 +52,10 @@ def slap(update: Update, context: CallbackContext):
     if user_id == bot.id:
         
         slapped_user = bot.get_chat(user_id)
-        user1 =curr_user
+        user1 = curr_user
+        
+    else:
+        user1 = curr_user
         
         temp = random.choice(fun_strings.SLAP_SAITAMA_TEMPLATES)
 
