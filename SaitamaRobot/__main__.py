@@ -53,7 +53,7 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """
 Halo {}, nama saya {}! 
 Saya adalah official bot manajemen grup [Kerabat Online](https://t.me/KerabatOnline) dan afiliasi.
------------------------------------
+---------------------
 
 Ketik /help untuk melihat perintah yang tersedia.
 """
@@ -543,7 +543,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "🥳")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "⟮⚆_⚆⟯ 𝐩𝐮𝐧𝐭𝐞𝐧...")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!")
