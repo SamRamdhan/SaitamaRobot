@@ -49,10 +49,10 @@ def send_rules(update, chat_id, from_pm=False):
             "silahkan cek #peraturan")
     elif rules:
         update.effective_message.reply_text(
-            "Peraturan grup @KerabatOnline.",
+            "Peraturan Grup Kerabat Online.",
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton(
-                    text="LIHAT DI DISINI", url=f"https://t.me/KerabatOnline_Ch/153/")
+                    text="Silahkan Baca Di Sini", url=f"https://t.me/KerabatOnline_Ch/153/")
             ]]))
     else:
         update.effective_message.reply_text(
