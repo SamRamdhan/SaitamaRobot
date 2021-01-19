@@ -53,9 +53,9 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """
 Halo {}, nama saya {}! 
 Saya adalah official bot manajemen grup [Kerabat Online](https://t.me/KerabatOnline) dan afiliasi.
----------------------
-
 Ketik /help untuk melihat perintah yang tersedia.
+
+Gabung dan ikuti sosial media kami di bawah ini:
 """
 
 HELP_STRINGS = """
@@ -225,7 +225,7 @@ def start(update: Update, context: CallbackContext):
                      ]]))
     else:
         update.effective_message.reply_text(
-            "Bot aktif!\n<b>Aktif semenjak:</b> <code>{}</code>"
+            "<i>Bot aktif!</i>\n<b>Aktif sekitar:</b> <code>{}</code>"
             .format(uptime),
             parse_mode=ParseMode.HTML)
 
