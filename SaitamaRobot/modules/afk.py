@@ -36,7 +36,7 @@ def afk(update: Update, context: CallbackContext):
     sql.set_afk(update.effective_user.id, reason)
     fname = update.effective_user.first_name
     try:
-        update.effective_message.reply_text("✋🏼 {} Sekarang Afk!{}".format(
+        update.effective_message.reply_text("📴 {} Sekarang Afk!{}".format(
             fname, notice))
     except BadRequest:
         pass
@@ -57,8 +57,8 @@ def no_longer_afk(update: Update, context: CallbackContext):
         firstname = update.effective_user.first_name
         try:
             options = [
-                '🙋🏻‍♂️ {} sekarang disini!', '🙋🏻‍♂️ {} sudah tidak AFK!', '🙋🏻‍♂️ {} sekarang telah aktif!',
-                '✅ {} telah aktif!', '✅ {} kembali aktif!', '🙋🏻‍♂️ {} akhirnya kembali!',
+                '✅ {} sekarang disini!', '🔥 {} sudah tidak AFK!', '✅ {} sekarang telah aktif!',
+                '✅ {} telah aktif!', '✅ {} kembali aktif!', '🔥 {} akhirnya kembali!',
                 'Siapa yang mengirim pesan barusan? Oh ternyata si {}., ', 'Ada yang rindu {}?\nDia sudah ada disini!'
             ]
             chosen_option = random.choice(options)
@@ -124,12 +124,12 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if not user.reason:
             if int(userc_id) == int(user_id):
                 return
-            res = "🙅🏻‍♂️ {} <i>sedang AFK</i>\n\n🤔 <b>Mungkin dia sedang sibuk.</b>".format(fst_name)
+            res = "‼️ {} <i>sedang AFK</i>\n\n🤔 <b>Mungkin dia sedang sibuk.</b>".format(fst_name)
             update.effective_message.reply_text(res, parse_mode="html")
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "🙅🏻‍♂️ {} <i>sedang AFK.</i>\n\n🗣️ <i>Alasannya karena:</i> <b>{}</b>".format(
+            res = "‼️ {} <i>sedang AFK.</i>\n\n📝 <i>Alasannya:</i> <b>{}</b>".format(
                 html.escape(fst_name), html.escape(user.reason))
             update.effective_message.reply_text(res, parse_mode="html")
 
