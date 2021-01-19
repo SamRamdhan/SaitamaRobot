@@ -38,7 +38,7 @@ SLAP_SAITAMA_TEMPLATES = (
     ])
 
 SLAP_TEMPLATES = (
-    "{user2} terjun dari pesawat tanpa parasut.",
+    "{user2} didorong oleh {user1} dari pesawat terbang tanpa parasut.",
     "{user2} takut melihat dirinya sendiri di cermin.",
     "{user2} terkapar setelah ditendang oleh {user1}.",
     "{user2} menjadi gila setelah gagal mendapatkan hatiku wkwkwk.",
@@ -191,7 +191,7 @@ PAT_STICKERS = (
     "CAACAgEAAxkBAAIBBV_yIhapzYTp5gOROQFLQepz2J4wAAJEAAPKtyI1iqQQZS-VI18eBA")
 
 PING_STRING = (
-    "PONG!!",
+    "PONG!!🏓🏓🏓",
     "Saya disini!",
 )
 
@@ -294,5 +294,5 @@ EIGHTBALL = [
 
 DECIDE = ("Bacot.", "be a ce o te.", "hilih bicit.", "Dih bacot.", "Iya deh bacot.", "bct.")
 
-TABLE = ("Hei {user1} ayo kabur 🏃🏻‍♂️🏃🏻‍♂🏃🏻‍♂💨💨💨 ", "Lari *bersembunyi pada rumput yang bergoyang*.",
+TABLE = ("Hei ayo kabur 🏃🏻‍♂️🏃🏻‍♂🏃🏻‍♂💨💨💨 ", "Lari *bersembunyi pada rumput yang bergoyang*.",
          "3 2 1 go!!! 🏃🏻‍♂️🏃🏻‍♂️🏃🏻‍♂️💨💨💨.")
